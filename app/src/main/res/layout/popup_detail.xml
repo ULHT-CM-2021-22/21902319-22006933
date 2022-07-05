@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="500dp"
+    android:layout_gravity="center"
+    android:background="@drawable/cercle_background"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/Detalhes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="18dp"
+        android:text="Detalhes"
+        android:textColor="@color/orange_200"
+        android:textSize="24sp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:id="@+id/nomePop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Detalhes"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="18dp"
+        android:text="Name"
+        android:textSize="20sp">></TextView>
+
+    <TextView
+        android:id="@+id/ccPop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nomePop"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="18dp"
+        android:text="Documento de identificação"
+        android:textSize="20sp"></TextView>
+
+    <TextView
+        android:id="@+id/destritoPop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ccPop"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="18dp"
+        android:text="Localização"
+        android:textSize="20sp"></TextView>
+
+    <TextView
+        android:id="@+id/dataPop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/destritoPop"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="18dp"
+        android:text="Data +  hora"
+        android:textSize="20sp"
+        ></TextView>
+
+    <ImageView
+        android:id="@+id/fotografia"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/dataPop"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/cercle_background"></ImageView>
+
+    <TextView
+        android:id="@+id/obsPop"
+        android:layout_width="150dp"
+        android:layout_height="205dp"
+        android:layout_below="@+id/dataPop"
+        android:layout_alignLeft="@+id/fotografia"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Observações"
+        android:textSize="20sp"
+        android:background="@drawable/cercle_background"></TextView>
+
+
+</RelativeLayout>

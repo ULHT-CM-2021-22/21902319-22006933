@@ -12,10 +12,24 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/nav_fires"
-        android:name="com.example.cm_recurso.ui.fires.FiresFragment"
+        android:id="@+id/nav_fires_list"
+        android:name="com.example.cm_recurso.ui.fires.FiresListFragment"
         android:label="@string/menu_fires"
-        tools:layout="@layout/fragment_fires" />
+        tools:layout="@layout/fragment_fires_list" >
+        <action
+            android:id="@+id/action_nav_fires_list_to_nav_fires_map"
+            app:destination="@id/nav_fires_map" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_fires_map"
+        android:name="com.example.cm_recurso.ui.fires.FiresMapFragment"
+        android:label="@string/menu_fires"
+        tools:layout="@layout/fragment_fires_map" >
+        <action
+            android:id="@+id/action_nav_fires_map_to_nav_fires_list"
+            app:destination="@id/nav_fires_list" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_new_fire"
