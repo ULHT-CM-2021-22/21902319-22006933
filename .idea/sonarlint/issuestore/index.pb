@@ -1,6 +1,22 @@
 
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+v
+Fapp/src/main/java/com/example/cm_recurso/ui/fires/FiresMapViewModel.kt,6\c\6c8c74e7c13f921cdbb78a47e6a31bc7e74a35f1
+w
+Gapp/src/main/java/com/example/cm_recurso/ui/fires/FiresListViewModel.kt,7\d\7d60899eedda88e36fe0c05885e932a165391f6c
+l
+<app/src/main/java/com/example/cm_recurso/ui/model/FireDao.kt,7\8\78992404d78f66b0a3af3694884868d09919ed3a
+m
+=app/src/main/java/com/example/cm_recurso/ui/model/FireRoom.kt,4\6\46c8e2fb22af6a3eae008191b7b8e224b40bbc50
+q
+Aapp/src/main/java/com/example/cm_recurso/ui/model/FireDataBase.kt,8\7\87cf64e9c154ebbafc1920f8bfe74571edf4b5fa
+r
+Bapp/src/main/java/com/example/cm_recurso/ui/model/FireModelRoom.kt,a\3\a3fd62dfaf332dd2bbe4ba9c542a1046b0358fc0
+s
+Capp/src/main/java/com/example/cm_recurso/ui/model/FireParceLable.kt,3\b\3b6ba0d430e86279eb20404c691ac2e92219d940
+x
+Happ/src/main/java/com/example/cm_recurso/ui/new_fire/NewFireViewModel.kt,e\2\e2a00d97183414dc66e12b04acbafb3f62ffcc03
+w
+Gapp/src/main/java/com/example/cm_recurso/ui/dashboard/DashboardModel.kt,b\6\b6010d257ff64f9fbc88ca567a5aa0c36d5a8a79
 k
 ;app/src/test/java/com/example/cm_recurso/ExampleUnitTest.kt,b\b\bb620972412e083ca549caba34c180fc975dbb80
 z
@@ -9,6 +25,8 @@ Japp/src/androidTest/java/com/example/cm_recurso/ExampleInstrumentedTest.kt,4\8
 app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f
 F
 app/proguard-rules.pro,9\e\9e08934d811afe28fbc77aaa3c0d747b94348db9
+X
+(gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 7
 gradlew,5\b\5bbfa66edb4db3c7c33c5181f43510990d3307f9
 :
@@ -20,15 +38,7 @@ F
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 A
 gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
-z
-Japp/src/main/java/com/example/cm_recurso/ui/dashboard/DashboardFragment.kt,4\9\492799979a2e096540b7007aa2dbf1db76f68feb
-w
-Gapp/src/main/java/com/example/cm_recurso/ui/dashboard/DashboardModel.kt,b\6\b6010d257ff64f9fbc88ca567a5aa0c36d5a8a79
-r
-Bapp/src/main/java/com/example/cm_recurso/ui/fires/FiresFragment.kt,b\9\b9d6466f67564f92b0448905dddac811b2b6ca49
+n
+>app/src/main/java/com/example/cm_recurso/ui/model/FireModel.kt,0\2\02c05b54125723145c761fe682c3750e38e5d8c4
 s
-Capp/src/main/java/com/example/cm_recurso/ui/fires/FiresViewModel.kt,e\d\ed848e4a199699bb86ff5b7a2f31b609207641c3
-w
-Gapp/src/main/java/com/example/cm_recurso/ui/new_fire/NewFireFragment.kt,d\b\db574edb825bdf7af20649836c5f19c25167fa39
-x
-Happ/src/main/java/com/example/cm_recurso/ui/new_fire/NewFireViewModel.kt,e\2\e2a00d97183414dc66e12b04acbafb3f62ffcc03
+Capp/src/main/java/com/example/cm_recurso/ui/fires/MyFiresAdapter.kt,5\3\536dd338d278b5e37a4cd7cd9e68c6f0171c7212

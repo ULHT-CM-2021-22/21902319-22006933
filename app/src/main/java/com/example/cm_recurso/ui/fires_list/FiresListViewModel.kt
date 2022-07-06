@@ -1,4 +1,4 @@
-package com.example.cm_recurso.ui.fires
+package com.example.cm_recurso.ui.fires_list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

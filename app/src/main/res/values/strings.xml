@@ -8,7 +8,8 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_dashboard">Dashboard</string>
-    <string name="menu_fires">Incêndios</string>
+    <string name="menu_fires_list">Lista de incêndios</string>
+    <string name="menu_fires_map">Mapa</string>
     <string name="menu_fire_registry">Registo de incêndios</string>
 
     <string name="fires_list_button">Lista</string>
@@ -27,4 +28,12 @@
     <string name="neww_fire_fiscalnumber">Cartão de cidadão</string>
     <string name="neww_fire_district">Distrito</string>
     <string name="neww_fire_date">Data</string>
+    <string name="neww_fire_photo">Fotografia</string>
+
+    <string name="risk_low">Risco reduzido</string>
+    <string name="risk_moderate">Risco moderado</string>
+    <string name="risk_high">Risco elevado</string>
+    <string name="risk_very_high">Risco muito Elevado</string>
+    <string name="risk_max">Risco máximo</string>
+
 </resources>

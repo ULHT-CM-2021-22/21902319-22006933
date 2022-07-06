@@ -1,4 +1,4 @@
-package com.example.cm_recurso.ui.fires
+package com.example.cm_recurso.ui.fires_list
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cm_recurso.R
 import com.example.cm_recurso.databinding.FragmentFiresListBinding
@@ -26,8 +25,6 @@ class FiresListFragment(private var items: List<FireParceLable> = listOf()) : Fr
     ): View {
         _binding = FragmentFiresListBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        binding.firesMap.setOnClickListener{ findNavController().navigate(R.id.action_nav_fires_list_to_nav_fires_map) }
 
         binding.recyclerView.adapter = MyFiresAdapter(items, this)
         binding.recyclerView.layoutManager = LinearLayoutManager(context)

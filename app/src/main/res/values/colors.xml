@@ -10,11 +10,19 @@
 
     <color name="orange_100">#F1E0DB</color>
     <color name="orange_200">#EC816F</color>
-    <color name="orange_250">#E18329</color>
+    <color name="orange_250">#F47662</color>
     <color name="orange_300">#F3654E</color>
     <color name="orange_500">#EE4E34</color>
     <color name="orange_900">#EF3012</color>
 
     <color name="peach_500">#FCEDDA</color>
+
+    <color name="text_shadow">#7F000000</color>
+
+    <color name="risk_low">#23D30F</color>
+    <color name="risk_moderate">#D7EC0C</color>
+    <color name="risk_high">#F4C63E</color>
+    <color name="risk_very_high">#B36C02</color>
+    <color name="risk_max">#BF2222</color>
 
 </resources>

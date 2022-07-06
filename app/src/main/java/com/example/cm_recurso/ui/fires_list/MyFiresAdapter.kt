@@ -1,4 +1,4 @@
-package com.example.cm_recurso.ui.fires
+package com.example.cm_recurso.ui.fires_list
 
 import android.view.LayoutInflater
 import android.view.View

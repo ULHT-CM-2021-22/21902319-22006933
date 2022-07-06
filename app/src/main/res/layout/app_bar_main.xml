@@ -16,7 +16,17 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.CM_recurso.PopupOverlay" />
+            app:popupTheme="@style/Theme.CM_recurso.PopupOverlay">
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/zoneRisk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:background="@color/risk_low"
+            android:text="@string/risk_low" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

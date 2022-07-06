@@ -10,8 +10,12 @@
             android:title="@string/menu_dashboard" />
         <item
             android:id="@+id/nav_fires_list"
-            android:icon="@drawable/ic_menu_fires"
-            android:title="@string/menu_fires" />
+            android:icon="@drawable/ic_menu_fires_list"
+            android:title="@string/menu_fires_list" />
+        <item
+            android:id="@+id/nav_fires_map"
+            android:icon="@drawable/ic_menu_fires_map"
+            android:title="@string/menu_fires_map" />
         <item
             android:id="@+id/nav_new_fire"
             android:icon="@drawable/ic_menu_new_fire"

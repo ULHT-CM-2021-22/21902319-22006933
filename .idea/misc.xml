@@ -5,12 +5,19 @@
       <map>
         <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.32" />
         <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/drawable/cercle_background.xml" value="0.2525" />
+        <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/drawable/circle_elevado.xml" value="0.491" />
+        <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/drawable/circle_maximo.xml" value="0.491" />
+        <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/drawable/circle_moderado.xml" value="0.491" />
+        <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/drawable/circle_muito_elevado.xml" value="0.491" />
+        <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/drawable/circle_reduzido.xml" value="0.491" />
         <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/drawable/dashboard_card_background.xml" value="0.4455" />
+        <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/drawable/ic_baseline_place_24.xml" value="0.3285" />
         <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3605" />
         <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/drawable/ic_launcher_foreground1.xml" value="0.484" />
         <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/drawable/ic_menu_camera.xml" value="0.3605" />
         <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/drawable/ic_menu_dashboard.xml" value="0.3605" />
         <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/drawable/ic_menu_fires.xml" value="0.3605" />
+        <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/drawable/ic_menu_fires_list.xml" value="0.3285" />
         <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/drawable/ic_menu_new_fire.xml" value="0.3605" />
         <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/drawable/side_nav_bar.xml" value="0.32" />
         <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/layout/activity_main.xml" value="0.359375" />

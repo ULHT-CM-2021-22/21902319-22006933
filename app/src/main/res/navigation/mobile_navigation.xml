@@ -13,23 +13,15 @@
 
     <fragment
         android:id="@+id/nav_fires_list"
-        android:name="com.example.cm_recurso.ui.fires.FiresListFragment"
-        android:label="@string/menu_fires"
-        tools:layout="@layout/fragment_fires_list" >
-        <action
-            android:id="@+id/action_nav_fires_list_to_nav_fires_map"
-            app:destination="@id/nav_fires_map" />
-    </fragment>
+        android:name="com.example.cm_recurso.ui.fires_list.FiresListFragment"
+        android:label="@string/menu_fires_list"
+        tools:layout="@layout/fragment_fires_list" />
 
     <fragment
         android:id="@+id/nav_fires_map"
-        android:name="com.example.cm_recurso.ui.fires.FiresMapFragment"
-        android:label="@string/menu_fires"
-        tools:layout="@layout/fragment_fires_map" >
-        <action
-            android:id="@+id/action_nav_fires_map_to_nav_fires_list"
-            app:destination="@id/nav_fires_list" />
-    </fragment>
+        android:name="com.example.cm_recurso.ui.fires_map.FiresMapFragment"
+        android:label="@string/menu_fires_map"
+        tools:layout="@layout/fragment_fires_map" />
 
     <fragment
         android:id="@+id/nav_new_fire"

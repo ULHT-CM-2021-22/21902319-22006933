@@ -5,43 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:minHeight="50dp">
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-        <LinearLayout
+        <fragment
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:id="@+id/map_fragment"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:background="@color/orange_250">
+            android:layout_height="match_parent" />
 
-            <Button
-                android:id="@+id/fires_list"
-                android:background="#0000"
-                android:textColor="@color/white"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="50dp"
-                android:text="Lista"></Button>
-            <Button
-                android:id="@+id/fires_map"
-                android:background="#0000"
-                android:textColor="@color/white"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="50dp"
-                android:text="Mapa"></Button>
-
-        </LinearLayout>
     </FrameLayout>
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="485dp"
-        android:layout_height="641dp"
-        app:srcCompat="@drawable/lisbon_map"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="50dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
