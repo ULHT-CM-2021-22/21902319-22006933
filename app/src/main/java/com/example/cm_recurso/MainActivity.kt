@@ -1,11 +1,14 @@
 package com.example.cm_recurso
 
+import android.content.pm.PackageManager
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.Menu
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -13,7 +16,9 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.cm_recurso.databinding.ActivityMainBinding
+import com.google.android.gms.location.*
 import com.google.android.material.navigation.NavigationView
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,6 +34,11 @@ class MainActivity : AppCompatActivity() {
         "#F4C63E",
         "#B36C02",
         "#BF2222")
+
+    private val LOCATION_PERMISSION_REQ_CODE = 1000;
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private var latitude: Double = 0.0
+    private var longitude: Double = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +68,8 @@ class MainActivity : AppCompatActivity() {
             getString(R.string.risk_max),
         )
 
+        //fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+        //getCurrentLocation()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -72,7 +84,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        handler.postDelayed(ativo, 20000)
+        handler.postDelayed(ativo, 5000)
     }
 
     private val ativo = object: Runnable {
@@ -84,6 +96,33 @@ class MainActivity : AppCompatActivity() {
             binding.appBarMain.zoneRisk.setBackgroundColor(Color.parseColor(riskColor[num]))
             binding.appBarMain.zoneRisk.text = risk[num]
             handler.postDelayed(this, 5000)
+        }
+    }
+
+    private fun getCurrentLocation() {
+
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQ_CODE)
+            return
+        }
+
+        fusedLocationClient.lastLocation.addOnSuccessListener { location ->
+            latitude = location.latitude
+            longitude = location.longitude
+        }.addOnFailureListener {
+            Toast.makeText(this, "Failed on getting current location", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        when (requestCode) {
+            LOCATION_PERMISSION_REQ_CODE -> {
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // Premission granted
+                } else {
+                    Toast.makeText(this, "You need to grant permission to access location", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 }

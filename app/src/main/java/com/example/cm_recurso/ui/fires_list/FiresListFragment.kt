@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cm_recurso.R
 import com.example.cm_recurso.databinding.FragmentFiresListBinding
-import com.example.cm_recurso.ui.model.FireParceLable
+import com.example.cm_recurso.model.fire.FireParceLable
 
 
 class FiresListFragment(private var items: List<FireParceLable> = listOf()) : Fragment() {

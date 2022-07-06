@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cm_recurso.R
-import com.example.cm_recurso.ui.model.FireParceLable
+import com.example.cm_recurso.model.fire.FireParceLable
 
 class MyFiresAdapter(private val list: List<FireParceLable>, private val listener: FiresListFragment) : RecyclerView.Adapter<MyFiresAdapter.ViewHolder>(){
 

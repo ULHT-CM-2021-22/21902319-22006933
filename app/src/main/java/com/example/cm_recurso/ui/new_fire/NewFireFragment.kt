@@ -11,8 +11,8 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import com.example.cm_recurso.R
 import com.example.cm_recurso.databinding.FragmentNewFireBinding
-import com.example.cm_recurso.ui.model.FireDataBase
-import com.example.cm_recurso.ui.model.FireModelRoom
+import com.example.cm_recurso.model.fire.FireDataBase
+import com.example.cm_recurso.model.fire.FireModelRoom
 import java.util.*
 
 class NewFireFragment : Fragment() {

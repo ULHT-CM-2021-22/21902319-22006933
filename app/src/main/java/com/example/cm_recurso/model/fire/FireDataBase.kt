@@ -1,4 +1,4 @@
-package com.example.cm_recurso.ui.model
+package com.example.cm_recurso.model.fire
 
 import android.content.Context
 import androidx.room.Database

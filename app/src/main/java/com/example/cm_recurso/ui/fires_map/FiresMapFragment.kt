@@ -1,6 +1,5 @@
 package com.example.cm_recurso.ui.fires_map
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +17,7 @@ import com.google.android.gms.maps.model.LatLngBounds
 class FiresMapFragment : Fragment() {
     private var _binding: FragmentFiresMapBinding? = null
     private val binding get() = _binding!!
+
     private val mapcallback = OnMapReadyCallback { googleMap ->
         googleMap.setOnMapLoadedCallback {
             val location = LatLng(38.723052962355865, -9.145511816566543)
@@ -53,5 +53,4 @@ class FiresMapFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

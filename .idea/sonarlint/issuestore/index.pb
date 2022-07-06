@@ -1,18 +1,4 @@
 
-v
-Fapp/src/main/java/com/example/cm_recurso/ui/fires/FiresMapViewModel.kt,6\c\6c8c74e7c13f921cdbb78a47e6a31bc7e74a35f1
-w
-Gapp/src/main/java/com/example/cm_recurso/ui/fires/FiresListViewModel.kt,7\d\7d60899eedda88e36fe0c05885e932a165391f6c
-l
-<app/src/main/java/com/example/cm_recurso/ui/model/FireDao.kt,7\8\78992404d78f66b0a3af3694884868d09919ed3a
-m
-=app/src/main/java/com/example/cm_recurso/ui/model/FireRoom.kt,4\6\46c8e2fb22af6a3eae008191b7b8e224b40bbc50
-q
-Aapp/src/main/java/com/example/cm_recurso/ui/model/FireDataBase.kt,8\7\87cf64e9c154ebbafc1920f8bfe74571edf4b5fa
-r
-Bapp/src/main/java/com/example/cm_recurso/ui/model/FireModelRoom.kt,a\3\a3fd62dfaf332dd2bbe4ba9c542a1046b0358fc0
-s
-Capp/src/main/java/com/example/cm_recurso/ui/model/FireParceLable.kt,3\b\3b6ba0d430e86279eb20404c691ac2e92219d940
 x
 Happ/src/main/java/com/example/cm_recurso/ui/new_fire/NewFireViewModel.kt,e\2\e2a00d97183414dc66e12b04acbafb3f62ffcc03
 w
@@ -38,7 +24,11 @@ X
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 A
 gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
-n
->app/src/main/java/com/example/cm_recurso/ui/model/FireModel.kt,0\2\02c05b54125723145c761fe682c3750e38e5d8c4
-s
-Capp/src/main/java/com/example/cm_recurso/ui/fires/MyFiresAdapter.kt,5\3\536dd338d278b5e37a4cd7cd9e68c6f0171c7212
+z
+Japp/src/main/java/com/example/cm_recurso/ui/dashboard/DashboardFragment.kt,4\9\492799979a2e096540b7007aa2dbf1db76f68feb
+|
+Lapp/src/main/java/com/example/cm_recurso/ui/fires_list/FiresListViewModel.kt,8\6\86ff7f6bbcd2320f66049d229799ade210536bfc
+z
+Japp/src/main/java/com/example/cm_recurso/ui/fires_map/FiresMapViewModel.kt,a\3\a35470aff3cfa96736034225e15bb3d340bc36b9
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
