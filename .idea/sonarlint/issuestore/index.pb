@@ -1,8 +1,22 @@
 
+w
+Gapp/src/main/java/com/example/cm_recurso/ui/new_fire/NewFireFragment.kt,d\b\db574edb825bdf7af20649836c5f19c25167fa39
 x
 Happ/src/main/java/com/example/cm_recurso/ui/new_fire/NewFireViewModel.kt,e\2\e2a00d97183414dc66e12b04acbafb3f62ffcc03
 w
 Gapp/src/main/java/com/example/cm_recurso/ui/dashboard/DashboardModel.kt,b\6\b6010d257ff64f9fbc88ca567a5aa0c36d5a8a79
+z
+Japp/src/main/java/com/example/cm_recurso/ui/fires_map/FiresMapViewModel.kt,a\3\a35470aff3cfa96736034225e15bb3d340bc36b9
+n
+>app/src/main/java/com/example/cm_recurso/model/fire/FireDao.kt,2\b\2b7ab0891f6ec36b8bcc640b473a508e9bafaaff
+o
+?app/src/main/java/com/example/cm_recurso/model/fire/FireRoom.kt,0\5\05c467e10d0e742d498cf48a0bf7892e8a2215e6
+s
+Capp/src/main/java/com/example/cm_recurso/model/fire/FireDataBase.kt,c\c\cce1d28085976c5b46c3f77a028de31fcbcd7834
+t
+Dapp/src/main/java/com/example/cm_recurso/model/fire/FireModelRoom.kt,f\7\f742b2ff08f0fb9910a5f4f6207f33528e80fceb
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 k
 ;app/src/test/java/com/example/cm_recurso/ExampleUnitTest.kt,b\b\bb620972412e083ca549caba34c180fc975dbb80
 z
@@ -20,15 +34,9 @@ X
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 ;
 gradlew.bat,2\a\2a45a911a8f1836b0b6c5b758962572012d8f8c3
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 ?
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 A
 gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
-z
-Japp/src/main/java/com/example/cm_recurso/ui/dashboard/DashboardFragment.kt,4\9\492799979a2e096540b7007aa2dbf1db76f68feb
-|
-Lapp/src/main/java/com/example/cm_recurso/ui/fires_list/FiresListViewModel.kt,8\6\86ff7f6bbcd2320f66049d229799ade210536bfc
-z
-Japp/src/main/java/com/example/cm_recurso/ui/fires_map/FiresMapViewModel.kt,a\3\a35470aff3cfa96736034225e15bb3d340bc36b9
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
