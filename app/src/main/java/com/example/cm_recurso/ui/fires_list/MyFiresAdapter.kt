@@ -23,7 +23,6 @@ class MyFiresAdapter(private val list: List<FireParceLable>, private val listene
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = list[position]
         holder.index.text = "Fogo ${position +1 }"
-        holder.nome.text = "Nome: " + currentItem.name
         holder.data.text = "Data: " + currentItem.data
     }
 
@@ -31,7 +30,7 @@ class MyFiresAdapter(private val list: List<FireParceLable>, private val listene
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         val index: TextView = itemView.findViewById(R.id.fogoIndex)
-        val nome: TextView = itemView.findViewById(R.id.nome)
+        val nome: TextView = itemView.findViewById(R.id.district)
         val data: TextView = itemView.findViewById(R.id.data)
 
         init{

@@ -24,7 +24,7 @@ class FireListAdapter (
 
     override fun onBindViewHolder(holder: FireListViewHolder, position: Int) {
         //Preenche cada item
-        holder.binding.nome.text = items[position].name
+        holder.binding.district.text = items[position].distrito
         holder.binding.data.text = items[position].data
     }
 

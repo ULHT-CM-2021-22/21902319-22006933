@@ -1,5 +1,6 @@
 package com.example.cm_recurso.ui.new_fire
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import com.example.cm_recurso.R
 import com.example.cm_recurso.databinding.FragmentNewFireBinding
 import com.example.cm_recurso.model.fire.FireDataBase
 import com.example.cm_recurso.model.fire.FireModelRoom
+import com.example.cm_recurso.ui.fires_list.FiresListFragment
 import java.util.*
 
 class NewFireFragment : Fragment() {
@@ -27,6 +29,7 @@ class NewFireFragment : Fragment() {
     ): View {
         firemodelroom = FireModelRoom(FireDataBase.getInstance(requireContext()).fireDao())
         _binding = FragmentNewFireBinding.inflate(inflater, container, false)
+
         val root: View = binding.root
 
         val btnSubmit: Button = root.findViewById(R.id.button_submit_form)
@@ -40,7 +43,7 @@ class NewFireFragment : Fragment() {
 
 
         btnSubmit.setOnClickListener {
-            firemodelroom.addFire(name, cc, district,"","", "2022-11-11", "13:30", "N/A", "N/A", "", "", "", "", 18.1, 20.1, "")
+            firemodelroom.addFire(name, cc, district,"","", date.toString(), "13:30", "N/A", "N/A", "", "", "", "", 18.1, 20.1, "")
             firemodelroom.getAllFires {}
         }
 
