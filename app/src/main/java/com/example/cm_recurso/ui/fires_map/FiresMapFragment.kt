@@ -20,17 +20,19 @@ class FiresMapFragment : Fragment() {
 
     private val mapcallback = OnMapReadyCallback { googleMap ->
         googleMap.setOnMapLoadedCallback {
-            val location = LatLng(38.723052962355865, -9.145511816566543)
-            val location1 = LatLng(38.74776097850073, -9.159412772335338)
-            val location2 = LatLng(38.747323479169985, -9.124492990045807)
-            val location3 = LatLng(38.73184521555347, -9.11215186216838)
-            val location4 = LatLng(38.75115150741277, -9.194893514982935)
+            val location = LatLng(41.848573, -8.846538)
+            val location1 = LatLng(42.137140, -8.202493)
+            val location2 = LatLng(41.962788, -6.586416)
+            val location3 = LatLng(41.575610, -6.192212)
+            val location4 = LatLng(36.975305, -7.897062)
+            val location5 = LatLng(38.779334, -9.497251)
             val bounds = LatLngBounds.builder()
             bounds.include(location)
             bounds.include(location1)
             bounds.include(location2)
             bounds.include(location3)
             bounds.include(location4)
+            bounds.include(location5)
             googleMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds.build(), 20))
         }
     }

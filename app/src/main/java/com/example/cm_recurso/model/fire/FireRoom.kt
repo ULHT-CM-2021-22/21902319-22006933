@@ -21,6 +21,27 @@ data class FireRoom(
     var isRegistry : String = "false",
 ) {
 
+    val lng: Double
+        get() {
+            TODO()
+        }
+    val lat: Double
+        get() {
+            TODO()
+        }
+    val aerial: String
+        get() {
+            TODO()
+        }
+    val terrain: String
+        get() {
+            TODO()
+        }
+    val man: String
+        get() {
+            TODO()
+        }
+
     override fun toString(): String {
         return "name='$name', " +
                 "cartaoCidadao=$cartaoCidadao, " +

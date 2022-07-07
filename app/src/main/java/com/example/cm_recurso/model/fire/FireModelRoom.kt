@@ -14,7 +14,15 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
         frequesia: String,
         data: String,
         hora: String,
-        fotografia: String
+        status: String,
+        fotografia: String,
+        distancia: String,
+        operacionais: String,
+        vehicles: String,
+        planes: String,
+        lat: Double,
+        lng: Double,
+        isRegistry: String
     ) {
         val fire = FireRoom(
             fireKey = name, name = name, cartaoCidadao = cartaoCidadao, distrito = distrito,
@@ -28,8 +36,26 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
             val fires = dao.getAll()
             print(fires)
             onFinished(fires.map{
-                FireParceLable(it.uuid, it.fireKey, it.name, it.cartaoCidadao, it.distrito,
-                    it.conselho, it.frequesia, it.data, it.hora, it.fotografia)
+                FireParceLable(
+                    it.uuid,
+                    it.fireKey,
+                    it.name,
+                    it.cartaoCidadao,
+                    it.distrito,
+                    it.conselho,
+                    it.frequesia,
+                    it.data,
+                    it.hora,
+                    it.fotografia,
+                    "",
+                    "",
+                    it.man,
+                    it.terrain,
+                    it.aerial,
+                    it.lat,
+                    it.lng,
+                    "false"
+                )
             })
         }
     }
@@ -54,8 +80,26 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
             }
             dao.deleteAll()
             onFinished(registeredFires.map{
-                FireParceLable(it.uuid, it.fireKey, it.name, it.cartaoCidadao, it.distrito,
-                    it.conselho, it.frequesia, it.data, it.hora, it.fotografia)
+                FireParceLable(
+                    it.uuid,
+                    it.fireKey,
+                    it.name,
+                    it.cartaoCidadao,
+                    it.distrito,
+                    it.conselho,
+                    it.frequesia,
+                    it.data,
+                    it.hora,
+                    it.fotografia,
+                    "",
+                    "",
+                    it.man,
+                    it.terrain,
+                    it.aerial,
+                    it.lat,
+                    it.lng,
+                    "false"
+                )
             })
         }
     }

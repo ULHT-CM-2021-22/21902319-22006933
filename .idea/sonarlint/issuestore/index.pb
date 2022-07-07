@@ -1,6 +1,4 @@
 
-w
-Gapp/src/main/java/com/example/cm_recurso/ui/new_fire/NewFireFragment.kt,d\b\db574edb825bdf7af20649836c5f19c25167fa39
 x
 Happ/src/main/java/com/example/cm_recurso/ui/new_fire/NewFireViewModel.kt,e\2\e2a00d97183414dc66e12b04acbafb3f62ffcc03
 w
@@ -9,12 +7,8 @@ z
 Japp/src/main/java/com/example/cm_recurso/ui/fires_map/FiresMapViewModel.kt,a\3\a35470aff3cfa96736034225e15bb3d340bc36b9
 n
 >app/src/main/java/com/example/cm_recurso/model/fire/FireDao.kt,2\b\2b7ab0891f6ec36b8bcc640b473a508e9bafaaff
-o
-?app/src/main/java/com/example/cm_recurso/model/fire/FireRoom.kt,0\5\05c467e10d0e742d498cf48a0bf7892e8a2215e6
 s
 Capp/src/main/java/com/example/cm_recurso/model/fire/FireDataBase.kt,c\c\cce1d28085976c5b46c3f77a028de31fcbcd7834
-t
-Dapp/src/main/java/com/example/cm_recurso/model/fire/FireModelRoom.kt,f\7\f742b2ff08f0fb9910a5f4f6207f33528e80fceb
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 k
@@ -40,8 +34,6 @@ X
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 A
 gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
-y
-Iapp/src/main/java/com/example/cm_recurso/ui/fires_map/FiresMapFragment.kt,7\e\7e55f6ebe0b119b048a21be118471968fdb5b023
 h
 8app/src/main/java/com/example/cm_recurso/MainActivity.kt,2\2\228d1fda46bdde94e0d7b2948e4761ba0a240dbb
 @
