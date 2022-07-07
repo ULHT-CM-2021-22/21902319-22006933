@@ -60,3 +60,5 @@ Japp/src/main/java/com/example/cm_recurso/ui/fires_list/MyFireViewholder.kt,1\3
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 d
 4app/src/main/java/com/example/cm_recurso/FireMain.kt,1\d\1d63a537b2abad08ee68d3537285cecf800edfb2
+h
+8app/src/main/java/com/example/cm_recurso/MainActivity.kt,2\2\228d1fda46bdde94e0d7b2948e4761ba0a240dbb
