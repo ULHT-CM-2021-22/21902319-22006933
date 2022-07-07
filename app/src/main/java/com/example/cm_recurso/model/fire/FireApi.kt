@@ -21,7 +21,7 @@ class FireApi(retrofit: Retrofit) : FireModel() {
             })
         }
     }
-
+    //
     override fun addFire(
         nome: String,
         numeroCC: String,
