@@ -1,7 +1,5 @@
 package com.example.cm_recurso.ui.fires_list
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -23,15 +21,16 @@ class FireListAdapter (
     }
 
     override fun onBindViewHolder(holder: FireListViewHolder, position: Int) {
-        holder.binding.fogoIndex.text = items[position].uuid
+        holder.binding.firestatus.text = items[position].status
+        holder.binding.firesconcelho.text = items[position].conselho
+        holder.binding.firesfreguesia.text = items[position].frequesia
         holder.binding.data.text = items[position].data
-        holder.binding.district.text = items[position].distrito
+        holder.binding.hora.text = items[position].hora
     }
 
     override fun getItemCount() = items.size
 
     fun updateItems(items: List<FireParceLable>) {
-        Log.d(TAG, "AKHBSKASKJA --------------> " + getItemCount())
         this.items = items
         notifyDataSetChanged()
     }

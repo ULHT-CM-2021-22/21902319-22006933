@@ -15,20 +15,14 @@ data class FireParceLable(
     var data: String,
     var hora: String,
     var fotografia: String,
-    val s: String,
-    val s1: String,
     val man: String,
-    val terrain: String,
+    val terrestrial: String,
     val aerial: String,
     val lat: Double,
     val lng: Double,
-    val s5: String,
-    //var lat: Double,
-    //var lng: Double,
-    //var isRegistry : String = "false",
+    val status: String,
+    var isRegistry : String = "false",
+    val distance: String
 ) : Parcelable {
-    val isRegistry: Any
-        get() {
-            TODO()
-        }
+
 }

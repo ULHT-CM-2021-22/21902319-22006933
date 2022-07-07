@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [FireRoom::class], version = 2)
+@Database(entities = [FireRoom::class], version = 3)
 abstract class FireDataBase : RoomDatabase() {
 
     abstract fun fireDao() : FireDao

@@ -15,16 +15,33 @@ class FireApi(retrofit: Retrofit) : FireModel() {
         CoroutineScope(Dispatchers.IO).launch {
             val fires = service.getAllFires()
             onFinished(fires.data.map{
-                FireParceLable(it.id, it.district + " - " + it.concelho + " - " + it.freguesia,
-                    "", "", it.district, it.concelho,
-                    it.freguesia, it.date, it.hour, it.status, "", "", it.man, it.terrain, it.aerial, it.lat, it.lng, "false")
+                FireParceLable(
+                    uuid = it.id,
+                    fireKey = "",
+                    name = "",
+                    cartaoCidadao = "",
+                    distrito = it.district,
+                    conselho = it.concelho,
+                    frequesia = it.freguesia,
+                    data = it.date,
+                    hora = it.hour,
+                    fotografia = "",
+                    man = it.man,
+                    terrestrial = it.terrain,
+                    aerial = it.aerial,
+                    lat = it.lat,
+                    lng = it.lng,
+                    status = it.status,
+                    distance = ""
+                )
             })
         }
     }
+
     //
     override fun addFire(
-        nome: String,
-        numeroCC: String,
+        name: String,
+        cartaoCidadao: String,
         distrito: String,
         conselho: String,
         frequesia: String,
@@ -32,10 +49,10 @@ class FireApi(retrofit: Retrofit) : FireModel() {
         hora: String,
         status: String,
         fotografia: String,
-        distancia: String,
-        operacionais: String,
-        vehicles: String,
-        planes: String,
+        distance: String,
+        man: String,
+        terrestrial: String,
+        aerial: String,
         lat: Double,
         lng: Double,
         isRegistry: String

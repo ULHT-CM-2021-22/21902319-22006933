@@ -116,6 +116,7 @@
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/firesTotal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="57"
@@ -178,6 +179,7 @@
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/firesTerrestrial"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="127"
@@ -311,6 +313,7 @@
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/firesMan"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="523"
@@ -372,6 +375,7 @@
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/firesAereal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="29"

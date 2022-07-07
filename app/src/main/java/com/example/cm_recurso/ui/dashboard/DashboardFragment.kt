@@ -5,26 +5,39 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.example.cm_recurso.R
 import com.example.cm_recurso.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {
-
-    private var _binding: FragmentDashboardBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentDashboardBinding
+    private lateinit var dashboardViewModel : DashboardViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        val view = inflater.inflate(
+            R.layout.fragment_dashboard, container, false
+        )
+        dashboardViewModel = ViewModelProvider(this).get(DashboardViewModel::class.java)
+        binding = FragmentDashboardBinding.bind(view)
 
-        return root
+        return binding.root
     }
+
+    override fun onStart() {
+        super.onStart()
+        val statistics = dashboardViewModel.getStatistics()
+        binding.firesTotal.text = statistics["totalFires"]
+        binding.firesAereal.text = statistics["totalAerial"]
+        binding.firesMan.text = statistics["totalFireman"]
+        binding.firesTerrestrial.text = statistics["totalTerrestrial"]
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
     }
 }

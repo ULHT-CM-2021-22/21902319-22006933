@@ -16,17 +16,17 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
         hora: String,
         status: String,
         fotografia: String,
-        distancia: String,
-        operacionais: String,
-        vehicles: String,
-        planes: String,
+        distance: String,
+        man: String,
+        terrestrial: String,
+        aerial: String,
         lat: Double,
         lng: Double,
         isRegistry: String
     ) {
         val fire = FireRoom(
             fireKey = name, name = name, cartaoCidadao = cartaoCidadao, distrito = distrito,
-            conselho = conselho, frequesia = frequesia, data = data, hora = hora, fotografia = fotografia, lng=18.1, lat=20.2, aerial = "15", terrain = "20", man = "150")
+            conselho = conselho, frequesia = frequesia, data = data, hora = hora, fotografia = fotografia, lng=lng, lat=lat, aerial = aerial, terrestrial = terrestrial, man = man, distance = distance, status = status)
 
         CoroutineScope(Dispatchers.IO).launch { dao.insert(fire) }
     }
@@ -37,24 +37,23 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
             print(fires)
             onFinished(fires.map{
                 FireParceLable(
-                    it.uuid,
-                    it.fireKey,
-                    it.name,
-                    it.cartaoCidadao,
-                    it.distrito,
-                    it.conselho,
-                    it.frequesia,
-                    it.data,
-                    it.hora,
-                    it.fotografia,
-                    "",
-                    "",
-                    it.man,
-                    it.terrain,
-                    it.aerial,
-                    it.lat,
-                    it.lng,
-                    "false"
+                    uuid = it.uuid,
+                    fireKey = it.fireKey,
+                    name = it.name,
+                    cartaoCidadao = it.cartaoCidadao,
+                    distrito = it.distrito,
+                    conselho = it.conselho,
+                    frequesia = it.frequesia,
+                    data = it.data,
+                    hora = it.hora,
+                    fotografia = it.fotografia,
+                    man = it.man,
+                    terrestrial = it.terrestrial,
+                    aerial = it.aerial,
+                    lat = it.lat,
+                    lng = it.lng,
+                    status = it.status,
+                    distance = it.distance
                 )
             })
         }
@@ -63,7 +62,7 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
     override fun insertFires(fires: List<FireParceLable>, onFinished: (List<FireParceLable>) -> Unit) {
         CoroutineScope(Dispatchers.IO).launch {
             val history = fires.map { FireRoom(it.uuid, it.fireKey, it.name, it.cartaoCidadao, it.distrito,
-                it.conselho, it.frequesia, it.data, it.hora, it.fotografia, "false", it.lng, it.lat, it.aerial, it.terrain, it.man) }
+                it.conselho, it.frequesia, it.data, it.hora, it.fotografia, it.isRegistry, it.lng, it.lat, it.status, it.distance, it.man, it.terrestrial, it.aerial) }
             dao.insertAll(history)
             onFinished(fires)
         }
@@ -81,24 +80,23 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
             dao.deleteAll()
             onFinished(registeredFires.map{
                 FireParceLable(
-                    it.uuid,
-                    it.fireKey,
-                    it.name,
-                    it.cartaoCidadao,
-                    it.distrito,
-                    it.conselho,
-                    it.frequesia,
-                    it.data,
-                    it.hora,
-                    it.fotografia,
-                    "",
-                    "",
-                    it.man,
-                    it.terrain,
-                    it.aerial,
-                    it.lat,
-                    it.lng,
-                    "false"
+                    uuid = it.uuid,
+                    fireKey = it.fireKey,
+                    name = it.name,
+                    cartaoCidadao = it.cartaoCidadao,
+                    distrito = it.distrito,
+                    conselho = it.conselho,
+                    frequesia = it.frequesia,
+                    data = it.data,
+                    hora = it.hora,
+                    fotografia = it.fotografia,
+                    man = it.man,
+                    terrestrial = it.terrestrial,
+                    aerial = it.aerial,
+                    lat = it.lat,
+                    lng = it.lng,
+                    status = it.status,
+                    distance = it.distance
                 )
             })
         }

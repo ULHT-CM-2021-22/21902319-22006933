@@ -21,17 +21,26 @@ data class FireRoom(
     var isRegistry : String = "false",
     val lng: Double,
     val lat: Double,
-    val aerial: String,
-    val terrain: String,
-    val man: String
+    val status: String,
+    var distance : String,
+    var man : String,
+    var terrestrial : String,
+    var aerial : String,
 ) {
 
     override fun toString(): String {
-        return "name='$name', " +
-                "cartaoCidadao=$cartaoCidadao, " +
-                "destrito='$distrito', " +
-                "data=$data, " +
+        return "Fire(nome='$name', " +
+                "cartaoCidadao='$cartaoCidadao', " +
+                "distrito='$distrito', " +
+                "data='$data', " +
                 "hora='$hora', " +
-                "fotografia='$fotografia')"
+                "conselho='$conselho', " +
+                "frequesia='$frequesia', " +
+                "status='$status', " +
+                "fotografia='$fotografia' " +
+                "distancia='$distance', " +
+                "operationais='$man', " +
+                "veiculos='$terrestrial', " +
+                "planes='$aerial')"
     }
 }

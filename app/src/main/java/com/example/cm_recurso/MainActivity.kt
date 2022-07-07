@@ -48,6 +48,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        FireRepository.init(this,
+            FireModelRoom(FireDataBase.getInstance(this).fireDao()),
+            FireApi(RetrofitBuilder.getInstance("https://api-dev.fogos.pt"))
+        )
+        FusedLocation.start(this)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -73,11 +78,6 @@ class MainActivity : AppCompatActivity() {
             getString(R.string.risk_very_high),
             getString(R.string.risk_max),
         )
-        FireRepository.init(this,
-            FireModelRoom(FireDataBase.getInstance(this).fireDao()),
-            FireApi(RetrofitBuilder.getInstance("https://api-dev.fogos.pt"))
-        )
-        FusedLocation.start(this)
 
         //fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         //getCurrentLocation()
