@@ -13,6 +13,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
+import com.google.android.gms.maps.model.MarkerOptions
 
 
 class FiresMapFragment : Fragment() {
@@ -20,8 +21,8 @@ class FiresMapFragment : Fragment() {
     private lateinit var firesMapViewModel : FiresMapViewModel
 
     private val mapcallback = OnMapReadyCallback { googleMap ->
-        googleMap.setOnMapLoadedCallback {
 
+        googleMap.setOnMapLoadedCallback {
             val location = LatLng(41.848573, -8.846538)
             val location1 = LatLng(42.137140, -8.202493)
             val location2 = LatLng(41.962788, -6.586416)
@@ -36,6 +37,16 @@ class FiresMapFragment : Fragment() {
             bounds.include(location4)
             bounds.include(location5)
             googleMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds.build(), 20))
+        }
+
+        val places = firesMapViewModel.getGeoLocations()
+
+        for (place in places) {
+            googleMap.addMarker(
+                MarkerOptions()
+                    .title(place.name)
+                    .position(place.latLng)
+            )
         }
     }
 

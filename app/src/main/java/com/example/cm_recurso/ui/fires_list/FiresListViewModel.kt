@@ -18,20 +18,4 @@ class FiresListViewModel(application: Application) : AndroidViewModel(applicatio
             repository.getAllFires(callback)
         }
     }
-
-    fun getAllRegistros(onFinished: (List<FireParceLable>) -> Unit){
-        repository.getAllRegistos(onFinished)
-    }
-
-    fun getAllFiresList(): List<FireParceLable> {
-        return repository.getAllFiresList()
-    }
-
-    fun getActiveFire() : List<FireParceLable> {
-        return repository.getActiveFires()
-    }
-
-    fun getDistrictWithMostFires() : String {
-        return repository.getDistrictWithMostFires()
-    }
 }
