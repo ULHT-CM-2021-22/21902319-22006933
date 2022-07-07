@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -36,6 +39,7 @@ class FiresListFragment() : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        districtNames()
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = myAdapter
         firesViewModel.getAllFires { updateList(it) }
@@ -45,6 +49,44 @@ class FiresListFragment() : Fragment() {
         CoroutineScope(Dispatchers.Main).launch {
             myAdapter.updateItems(fireList)
         }
+    }
+
+    private fun districtNames(){
+        val spinner: Spinner = binding.spinner
+
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener  {
+            override fun onItemSelected(adapterView: AdapterView<*>?, view: View, i: Int, l: Long) {
+                updateList(getFiresByDistrict(spinner.selectedItem.toString()))
+            }
+
+            override fun onNothingSelected(adapterView: AdapterView<*>?) {
+                return
+            }
+        }
+
+        ArrayAdapter.createFromResource(
+            requireActivity(),
+            R.array.district_list,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spinner.adapter = adapter
+        }
+    }
+
+    fun getFiresByDistrict(district:String): List<FireParceLable> {
+        if(district == "Todos os Distritos") {
+            return firesViewModel.getAllFiresList()
+        }
+
+        val fires : MutableList<FireParceLable> = mutableListOf()
+        for(fire in firesViewModel.getAllFiresList()) {
+            if(fire.distrito == district) {
+                fires.add(fire)
+            }
+        }
+
+        return fires
     }
 
     override fun onDestroyView() {

@@ -44,7 +44,6 @@ class NewFireFragment : Fragment() {
 
         btnSubmit.setOnClickListener {
             firemodelroom.addFire(name, cc, district,"","", date.toString(), "13:30", "N/A", "N/A", "", "", "", "", 18.1, 20.1, "")
-            firemodelroom.getAllFires {}
         }
 
         return root
