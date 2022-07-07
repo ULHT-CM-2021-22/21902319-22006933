@@ -1,5 +1,7 @@
 package com.example.cm_recurso.ui.fires_list
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +25,6 @@ class MyFiresAdapter(private val list: List<FireParceLable>, private val listene
         holder.index.text = "Fogo ${position +1 }"
         holder.nome.text = "Nome: " + currentItem.name
         holder.data.text = "Data: " + currentItem.data
-
     }
 
     override fun getItemCount() = list.size
@@ -40,7 +41,7 @@ class MyFiresAdapter(private val list: List<FireParceLable>, private val listene
         override fun onClick(v: View?) {
             val position = adapterPosition
             if (position != RecyclerView.NO_POSITION) {
-                listener.onItemClick(position)
+                //listener.onItemClick(position)
             }
         }
     }

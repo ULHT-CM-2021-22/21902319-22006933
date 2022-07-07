@@ -32,12 +32,8 @@ X
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 A
 gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
-h
-8app/src/main/java/com/example/cm_recurso/MainActivity.kt,2\2\228d1fda46bdde94e0d7b2948e4761ba0a240dbb
 z
 Japp/src/main/java/com/example/cm_recurso/ui/dashboard/DashboardFragment.kt,4\9\492799979a2e096540b7007aa2dbf1db76f68feb
-d
-4app/src/main/java/com/example/cm_recurso/FireMain.kt,1\d\1d63a537b2abad08ee68d3537285cecf800edfb2
 Å
 Qapp/src/main/java/com/example/cm_recurso/ui/location/OnLocationChangedListener.kt,8\d\8d90c4c145da18e9b560100522bae8ab2d6b9b3b
 y
@@ -54,7 +50,5 @@ r
 Bapp/src/main/java/com/example/cm_recurso/model/fire/FireService.kt,f\d\fd83b0373d0f43d3d3c88875e23f5c2607fbe0ba
 p
 @app/src/main/java/com/example/cm_recurso/model/fire/FireModel.kt,a\0\a0f720e264fd98132f411386bc92568084d88fd4
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 w
 Gapp/src/main/java/com/example/cm_recurso/ui/new_fire/NewFireFragment.kt,d\b\db574edb825bdf7af20649836c5f19c25167fa39

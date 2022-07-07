@@ -16,6 +16,12 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.cm_recurso.databinding.ActivityMainBinding
+import com.example.cm_recurso.model.fire.FireApi
+import com.example.cm_recurso.model.fire.FireDataBase
+import com.example.cm_recurso.model.fire.FireModelRoom
+import com.example.cm_recurso.ui.location.FusedLocation
+import com.example.cm_recurso.ui.repository.FireRepository
+import com.example.cm_recurso.ui.repository.RetrofitBuilder
 import com.google.android.gms.location.*
 import com.google.android.material.navigation.NavigationView
 
@@ -67,6 +73,11 @@ class MainActivity : AppCompatActivity() {
             getString(R.string.risk_very_high),
             getString(R.string.risk_max),
         )
+        FireRepository.init(this,
+            FireModelRoom(FireDataBase.getInstance(this).fireDao()),
+            FireApi(RetrofitBuilder.getInstance("https://api-dev.fogos.pt"))
+        )
+        FusedLocation.start(this)
 
         //fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         //getCurrentLocation()

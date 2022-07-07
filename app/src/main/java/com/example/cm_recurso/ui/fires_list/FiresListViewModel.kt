@@ -15,12 +15,12 @@ class FiresListViewModel(application: Application) : AndroidViewModel(applicatio
 
     fun getAllFires(callback: (List<FireParceLable>) -> Unit){
         CoroutineScope(Dispatchers.Main).launch {
-            //repository.getAllFires(callback)
+            repository.getAllFires(callback)
         }
     }
 
     fun getAllRegistros(onFinished: (List<FireParceLable>) -> Unit){
-        //repository.getAllRegistros(onFinished)
+        repository.getAllRegistos(onFinished)
     }
 
     fun getAllFiresList(): List<FireParceLable> {
