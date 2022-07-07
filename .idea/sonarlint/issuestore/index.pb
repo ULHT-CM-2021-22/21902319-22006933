@@ -40,3 +40,15 @@ X
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 A
 gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
+y
+Iapp/src/main/java/com/example/cm_recurso/ui/fires_map/FiresMapFragment.kt,7\e\7e55f6ebe0b119b048a21be118471968fdb5b023
+h
+8app/src/main/java/com/example/cm_recurso/MainActivity.kt,2\2\228d1fda46bdde94e0d7b2948e4761ba0a240dbb
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+z
+Japp/src/main/java/com/example/cm_recurso/ui/dashboard/DashboardFragment.kt,4\9\492799979a2e096540b7007aa2dbf1db76f68feb
+d
+4app/src/main/java/com/example/cm_recurso/FireMain.kt,1\d\1d63a537b2abad08ee68d3537285cecf800edfb2
+Å
+Qapp/src/main/java/com/example/cm_recurso/ui/location/OnLocationChangedListener.kt,8\d\8d90c4c145da18e9b560100522bae8ab2d6b9b3b
