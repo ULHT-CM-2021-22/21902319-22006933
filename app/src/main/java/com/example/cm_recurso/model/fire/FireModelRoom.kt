@@ -26,7 +26,7 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
     ) {
         val fire = FireRoom(
             fireKey = name, name = name, cartaoCidadao = cartaoCidadao, distrito = distrito,
-            conselho = conselho, frequesia = frequesia, data = data, hora = hora, fotografia = fotografia)
+            conselho = conselho, frequesia = frequesia, data = data, hora = hora, fotografia = fotografia, lng=18.1, lat=20.2, aerial = "15", terrain = "20", man = "150")
 
         CoroutineScope(Dispatchers.IO).launch { dao.insert(fire) }
     }
@@ -63,7 +63,7 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
     override fun insertFires(fires: List<FireParceLable>, onFinished: (List<FireParceLable>) -> Unit) {
         CoroutineScope(Dispatchers.IO).launch {
             val history = fires.map { FireRoom(it.uuid, it.fireKey, it.name, it.cartaoCidadao, it.distrito,
-                it.conselho, it.frequesia, it.data, it.hora, it.fotografia) }
+                it.conselho, it.frequesia, it.data, it.hora, it.fotografia, "false", it.lng, it.lat, it.aerial, it.terrain, it.man) }
             dao.insertAll(history)
             onFinished(fires)
         }

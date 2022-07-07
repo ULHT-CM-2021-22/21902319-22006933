@@ -19,28 +19,12 @@ data class FireRoom(
     var hora: String,
     var fotografia: String,
     var isRegistry : String = "false",
-) {
-
-    val lng: Double
-        get() {
-            TODO()
-        }
-    val lat: Double
-        get() {
-            TODO()
-        }
-    val aerial: String
-        get() {
-            TODO()
-        }
-    val terrain: String
-        get() {
-            TODO()
-        }
+    val lng: Double,
+    val lat: Double,
+    val aerial: String,
+    val terrain: String,
     val man: String
-        get() {
-            TODO()
-        }
+) {
 
     override fun toString(): String {
         return "name='$name', " +

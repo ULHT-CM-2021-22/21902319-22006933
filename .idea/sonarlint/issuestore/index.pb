@@ -7,8 +7,6 @@ z
 Japp/src/main/java/com/example/cm_recurso/ui/fires_map/FiresMapViewModel.kt,a\3\a35470aff3cfa96736034225e15bb3d340bc36b9
 n
 >app/src/main/java/com/example/cm_recurso/model/fire/FireDao.kt,2\b\2b7ab0891f6ec36b8bcc640b473a508e9bafaaff
-s
-Capp/src/main/java/com/example/cm_recurso/model/fire/FireDataBase.kt,c\c\cce1d28085976c5b46c3f77a028de31fcbcd7834
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 k
@@ -36,8 +34,6 @@ A
 gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
 h
 8app/src/main/java/com/example/cm_recurso/MainActivity.kt,2\2\228d1fda46bdde94e0d7b2948e4761ba0a240dbb
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 z
 Japp/src/main/java/com/example/cm_recurso/ui/dashboard/DashboardFragment.kt,4\9\492799979a2e096540b7007aa2dbf1db76f68feb
 d
@@ -46,3 +42,19 @@ d
 Qapp/src/main/java/com/example/cm_recurso/ui/location/OnLocationChangedListener.kt,8\d\8d90c4c145da18e9b560100522bae8ab2d6b9b3b
 y
 Iapp/src/main/java/com/example/cm_recurso/ui/repository/RetrofitBuilder.kt,f\5\f574d3c66f7eb0a747928327fb58137695789396
+u
+Eapp/src/main/java/com/example/cm_recurso/ui/location/FusedLocation.kt,7\9\798156f88fdabac5cf790804459a7f1116a14d98
+z
+Japp/src/main/java/com/example/cm_recurso/ui/repository/ConnectivityUtil.kt,8\0\8014887153eb4701326747172caf303ba06e0c7c
+n
+>app/src/main/java/com/example/cm_recurso/model/fire/FireApi.kt,7\8\781c39f871112243e023eec06680ff799497c81c
+y
+Iapp/src/main/java/com/example/cm_recurso/ui/fires_map/FiresMapFragment.kt,7\e\7e55f6ebe0b119b048a21be118471968fdb5b023
+r
+Bapp/src/main/java/com/example/cm_recurso/model/fire/FireService.kt,f\d\fd83b0373d0f43d3d3c88875e23f5c2607fbe0ba
+p
+@app/src/main/java/com/example/cm_recurso/model/fire/FireModel.kt,a\0\a0f720e264fd98132f411386bc92568084d88fd4
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+w
+Gapp/src/main/java/com/example/cm_recurso/ui/new_fire/NewFireFragment.kt,d\b\db574edb825bdf7af20649836c5f19c25167fa39

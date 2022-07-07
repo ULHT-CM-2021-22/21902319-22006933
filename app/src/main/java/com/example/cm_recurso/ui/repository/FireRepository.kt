@@ -32,7 +32,7 @@ class FireRepository private constructor(private val context: Context,
         }
     }
 
-    fun getAllRegistros(onFinished: (List<FireParceLable>) -> Unit) {
+    fun getAllRegistos(onFinished: (List<FireParceLable>) -> Unit) {
         CoroutineScope(Dispatchers.IO).launch {
             onFinished(fires)
         }
@@ -42,7 +42,6 @@ class FireRepository private constructor(private val context: Context,
         return fires
     }
 
-    //Função de LongClick pra apagar
     fun deleteFire(fire: FireParceLable, onSucess: (List<FireParceLable>) -> Unit) {
         val firesFiltered : MutableList<FireParceLable> = mutableListOf()
 
@@ -103,6 +102,5 @@ class FireRepository private constructor(private val context: Context,
         fun getInstance(): FireRepository {
             return instance ?: throw IllegalStateException("Repository not initialized")
         }
-
     }
 }
