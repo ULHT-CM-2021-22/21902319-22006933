@@ -52,3 +52,5 @@ d
 4app/src/main/java/com/example/cm_recurso/FireMain.kt,1\d\1d63a537b2abad08ee68d3537285cecf800edfb2
 Å
 Qapp/src/main/java/com/example/cm_recurso/ui/location/OnLocationChangedListener.kt,8\d\8d90c4c145da18e9b560100522bae8ab2d6b9b3b
+y
+Iapp/src/main/java/com/example/cm_recurso/ui/repository/RetrofitBuilder.kt,f\5\f574d3c66f7eb0a747928327fb58137695789396
