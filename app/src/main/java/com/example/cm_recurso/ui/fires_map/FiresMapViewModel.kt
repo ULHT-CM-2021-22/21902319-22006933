@@ -1,4 +1,9 @@
 package com.example.cm_recurso.ui.fires_map
 
-class FiresMapViewModel {
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+
+class FiresMapViewModel(application: Application) : AndroidViewModel(application) {
+
+
 }
