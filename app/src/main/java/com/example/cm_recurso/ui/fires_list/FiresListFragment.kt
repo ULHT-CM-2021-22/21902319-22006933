@@ -56,19 +56,15 @@ class FiresListFragment() : Fragment() {
     private fun districtNames(){
         val spinner: Spinner = binding.spinner
 
-        spinner.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(adapterView: AdapterView<*>?,
-                                        view: View,
-                                        i: Int,
-                                        l: Long)
-            {
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener  {
+            override fun onItemSelected(adapterView: AdapterView<*>?, view: View, i: Int, l: Long) {
                 updateList(getFiresByDistrict(spinner.selectedItem.toString()))
             }
 
             override fun onNothingSelected(adapterView: AdapterView<*>?) {
                 return
             }
-        })
+        }
 
         ArrayAdapter.createFromResource(
             requireActivity(),
