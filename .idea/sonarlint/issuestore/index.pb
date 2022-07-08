@@ -52,8 +52,6 @@ n
 >app/src/main/java/com/example/cm_recurso/model/fire/FireApi.kt,7\8\781c39f871112243e023eec06680ff799497c81c
 s
 Capp/src/main/java/com/example/cm_recurso/model/fire/FireDataBase.kt,c\c\cce1d28085976c5b46c3f77a028de31fcbcd7834
-y
-Iapp/src/main/java/com/example/cm_recurso/ui/fires_list/FireListAdapter.kt,a\b\abec090ae219adc4664e94bec736013d633a56db
 p
 @app/src/main/java/com/example/cm_recurso/model/fire/FireModel.kt,a\0\a0f720e264fd98132f411386bc92568084d88fd4
 t
@@ -62,5 +60,9 @@ u
 Eapp/src/main/java/com/example/cm_recurso/model/fire/FireParceLable.kt,b\6\b671ff15be8b7c1097cf2534283f9deb60fd508e
 o
 ?app/src/main/java/com/example/cm_recurso/model/fire/FireRoom.kt,0\5\05c467e10d0e742d498cf48a0bf7892e8a2215e6
-h
-8app/src/main/java/com/example/cm_recurso/MainActivity.kt,2\2\228d1fda46bdde94e0d7b2948e4761ba0a240dbb
+z
+Japp/src/main/java/com/example/cm_recurso/ui/dashboard/DashboardFragment.kt,4\9\492799979a2e096540b7007aa2dbf1db76f68feb
+{
+Kapp/src/main/java/com/example/cm_recurso/ui/dashboard/DashboardViewModel.kt,1\4\149849feb25de377b5d533d2c4f5ccf0637847ea
+|
+Lapp/src/main/java/com/example/cm_recurso/ui/fires_list/FiresListViewModel.kt,8\6\86ff7f6bbcd2320f66049d229799ade210536bfc

@@ -22,6 +22,18 @@
     <string name="dashboard_air_total">Total de meios aéreos</string>
     <string name="dashboard_terrestrial_total">Total de meios terrestres</string>
 
+    <string name="fire_details_card_label">Detalhes incêndio</string>
+    <string name="fire_details_status">Estado</string>
+    <string name="fire_details_district">Distrido</string>
+    <string name="fire_details_conselho">Conselho</string>
+    <string name="fire_details_freguesia">Freguesia</string>
+    <string name="fire_details_date">Data</string>
+    <string name="fire_details_hour">Hora</string>
+    <string name="fire_details_observations">Observações</string>
+
+    <string name="fire_details_na">Informação não disponivel</string>
+    <string name="fire_details_nomeans">0</string>
+
     <string name="neww_fire_cardlabel">Registe incêndio</string>
     <string name="neww_fire_registry">Registar</string>
     <string name="neww_fire_name">Nome</string>

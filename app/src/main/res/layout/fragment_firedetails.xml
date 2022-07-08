@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.new_fire.NewFireFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:elevation="0dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/peach_500"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/peach_500"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/fire_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="@string/fire_details_card_label"
+                                android:textAlignment="center"
+                                android:textColor="#000000"
+                                android:textSize="24dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:weightSum="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@color/white"
+                            android:layout_marginTop="10dp">
+
+                            <LinearLayout
+                                android:layout_weight="1.3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:id="@+id/fire_status"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/fire_details_status"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:background="@color/white"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_weight="0.7"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:id="@+id/fire_status_input"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/fire_details_na"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:background="@color/white"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:weightSum="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@color/white"
+                            android:layout_marginTop="10dp">
+
+                            <LinearLayout
+                                android:layout_weight="1.3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:id="@+id/fire_location"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/fire_details_district"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:background="@color/white"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_weight="0.7"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:id="@+id/fire_location_input"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/fire_details_na"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:background="@color/white"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:weightSum="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@color/white"
+                            android:layout_marginTop="10dp">
+
+                            <LinearLayout
+                                android:layout_weight="1.3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:id="@+id/fire_location1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/fire_details_conselho"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:background="@color/white"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_weight="0.7"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:id="@+id/fire_location1_input"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/fire_details_na"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:background="@color/white"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:weightSum="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@color/white"
+                            android:layout_marginTop="10dp">
+
+                            <LinearLayout
+                                android:layout_weight="1.3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:id="@+id/fire_location2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/fire_details_freguesia"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:background="@color/white"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_weight="0.7"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:id="@+id/fire_location2_input"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/fire_details_na"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:background="@color/white"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:weightSum="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@color/white"
+                            android:layout_marginTop="10dp">
+
+                            <LinearLayout
+                                android:layout_weight="1.3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:id="@+id/fire_date"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/fire_details_date"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:background="@color/white"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_weight="0.7"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:id="@+id/fire_date_input"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/fire_details_na"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:background="@color/white"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:weightSum="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@color/white"
+                            android:layout_marginTop="10dp">
+
+                            <LinearLayout
+                                android:layout_weight="1.3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:id="@+id/fire_hour"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/fire_details_hour"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:background="@color/white"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_weight="0.7"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:id="@+id/fire_hour_input"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/fire_details_na"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:background="@color/white"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:weightSum="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@color/white"
+                            android:layout_marginTop="10dp">
+
+                            <LinearLayout
+                                android:layout_weight="1.3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:id="@+id/fire_observations"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/fire_details_observations"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:background="@color/white"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_weight="0.7"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:id="@+id/fire_observations_input"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/fire_details_na"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:background="@color/white"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:weightSum="3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@color/white"
+                            android:layout_marginTop="10dp">
+
+                            <LinearLayout
+                                android:weightSum="2"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <LinearLayout
+                                    android:layout_weight="0.8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/white"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/fire_man"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:src="@drawable/ic_fire_person"
+                                        android:background="@color/white">
+                                    </ImageView>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_weight="1.2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/white"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/fire_man_input"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="@string/fire_details_nomeans"
+                                        android:gravity="center"
+                                        android:layout_gravity="center_horizontal"
+                                        android:textColor="#000000"
+                                        android:textSize="14dp"
+                                        android:textStyle="bold"
+                                        android:background="@color/white"/>
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:weightSum="2"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <LinearLayout
+                                    android:layout_weight="0.8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/white"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/fire_car"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:src="@drawable/ic_fire_car"
+                                        android:background="@color/white">
+                                    </ImageView>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_weight="1.2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/white"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/fire_car_input"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="@string/fire_details_nomeans"
+                                        android:gravity="center"
+                                        android:layout_gravity="center_horizontal"
+                                        android:textColor="#000000"
+                                        android:textSize="14dp"
+                                        android:textStyle="bold"
+                                        android:background="@color/white"/>
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:weightSum="2"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <LinearLayout
+                                    android:layout_weight="0.8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/white"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/fire_plain"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:src="@drawable/ic_fires_plains"
+                                        android:background="@color/white">
+                                    </ImageView>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_weight="1.2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/white"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/fire_plain_input"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="@string/fire_details_nomeans"
+                                        android:gravity="center"
+                                        android:layout_gravity="center_horizontal"
+                                        android:textColor="#000000"
+                                        android:textSize="14dp"
+                                        android:textStyle="bold"
+                                        android:background="@color/white"/>
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

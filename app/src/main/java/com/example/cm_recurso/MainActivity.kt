@@ -79,8 +79,6 @@ class MainActivity : AppCompatActivity() {
             getString(R.string.risk_max),
         )
 
-        //fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-        //getCurrentLocation()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

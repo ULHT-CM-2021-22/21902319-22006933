@@ -15,7 +15,11 @@
         android:id="@+id/nav_fires_list"
         android:name="com.example.cm_recurso.ui.fires_list.FiresListFragment"
         android:label="@string/menu_fires_list"
-        tools:layout="@layout/fragment_fires_list" />
+        tools:layout="@layout/fragment_fires_list" >
+        <action
+            android:id="@+id/action_nav_fires_list_to_fireDetailsFragment"
+            app:destination="@id/fireDetailsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_fires_map"
@@ -28,4 +32,8 @@
         android:name="com.example.cm_recurso.ui.new_fire.NewFireFragment"
         android:label="@string/menu_fire_registry"
         tools:layout="@layout/fragment_new_fire" />
+    <fragment
+        android:id="@+id/fireDetailsFragment"
+        android:name="com.example.cm_recurso.ui.fire_details.FireDetailsFragment"
+        android:label="FireDetailsFragment" />
 </navigation>

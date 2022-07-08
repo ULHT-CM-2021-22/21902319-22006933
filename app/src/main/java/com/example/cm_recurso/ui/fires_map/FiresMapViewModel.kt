@@ -10,12 +10,12 @@ class FiresMapViewModel(application: Application) : AndroidViewModel(application
 
     private val repository = FireRepository.getInstance()
 
-    fun getActiveFire() : List<FireParceLable> {
+    private fun getActiveFire() : List<FireParceLable> {
         return repository.getActiveFires()
     }
 
     fun getGeoLocations(): List<Place> {
-        var places = mutableListOf<Place>()
+        val places = mutableListOf<Place>()
         val fires = getActiveFire()
 
         for (fire in fires) {
