@@ -89,9 +89,24 @@ class NewFireFragment : Fragment() {
         val hour = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
         val foto = getFotoURI()
 
-        firemodelroom.addFire(name, cc, district,"","", date, hour,
-            "Por confirmar", "", "", "0", "0", "0",
-            lat,lng,"true")
+        firemodelroom.addFire(
+                name = name,
+                cartaoCidadao = cc,
+                distrito = district,
+                conselho = "",
+                frequesia = "",
+                data = date,
+                hora = hour,
+                status = "Por confirmar",
+                fotografia = foto,
+                distance = "",
+                man = "0",
+                terrestrial = "0",
+                aerial = "0",
+                lat = lat,
+                lng = lng,
+                isRegistry = "true"
+            )
 
         Toast.makeText(activity, "Incêndio inserido", Toast.LENGTH_SHORT).show()
 

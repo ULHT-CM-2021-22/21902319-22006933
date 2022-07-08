@@ -26,8 +26,6 @@ z
 Japp/src/main/java/com/example/cm_recurso/ui/repository/ConnectivityUtil.kt,8\0\8014887153eb4701326747172caf303ba06e0c7c
 y
 Iapp/src/main/java/com/example/cm_recurso/ui/repository/RetrofitBuilder.kt,f\5\f574d3c66f7eb0a747928327fb58137695789396
-n
->app/src/main/java/com/example/cm_recurso/model/fire/FireDao.kt,2\b\2b7ab0891f6ec36b8bcc640b473a508e9bafaaff
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 ?
@@ -40,18 +38,8 @@ r
 Bapp/src/main/java/com/example/cm_recurso/model/fire/FireService.kt,f\d\fd83b0373d0f43d3d3c88875e23f5c2607fbe0ba
 d
 4app/src/main/java/com/example/cm_recurso/FireMain.kt,1\d\1d63a537b2abad08ee68d3537285cecf800edfb2
-n
->app/src/main/java/com/example/cm_recurso/model/fire/FireApi.kt,7\8\781c39f871112243e023eec06680ff799497c81c
-s
-Capp/src/main/java/com/example/cm_recurso/model/fire/FireDataBase.kt,c\c\cce1d28085976c5b46c3f77a028de31fcbcd7834
-p
-@app/src/main/java/com/example/cm_recurso/model/fire/FireModel.kt,a\0\a0f720e264fd98132f411386bc92568084d88fd4
-t
-Dapp/src/main/java/com/example/cm_recurso/model/fire/FireModelRoom.kt,f\7\f742b2ff08f0fb9910a5f4f6207f33528e80fceb
 u
 Eapp/src/main/java/com/example/cm_recurso/model/fire/FireParceLable.kt,b\6\b671ff15be8b7c1097cf2534283f9deb60fd508e
-o
-?app/src/main/java/com/example/cm_recurso/model/fire/FireRoom.kt,0\5\05c467e10d0e742d498cf48a0bf7892e8a2215e6
 n
 >app/src/main/java/com/example/cm_recurso/ui/fires_map/Place.kt,a\5\a5978903d64152b7b3f78427460b88739682542b
 y

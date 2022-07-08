@@ -1,5 +1,7 @@
 package com.example.cm_recurso.model.fire
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -25,10 +27,27 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
         isRegistry: String
     ) {
         val fire = FireRoom(
-            fireKey = name, name = name, cartaoCidadao = cartaoCidadao, distrito = distrito,
-            conselho = conselho, frequesia = frequesia, data = data, hora = hora, fotografia = fotografia, lng=lng, lat=lat, aerial = aerial, terrestrial = terrestrial, man = man, distance = distance, status = status)
+            fireKey = name,
+            name = name,
+            cartaoCidadao = cartaoCidadao,
+            distrito = distrito,
+            conselho = conselho,
+            frequesia = frequesia,
+            data = data,
+            hora = hora,
+            fotografia = fotografia,
+            man = man,
+            terrestrial = terrestrial,
+            aerial = aerial,
+            lat = lat,
+            lng = lng,
+            status = status,
+            distance = distance)
 
-        CoroutineScope(Dispatchers.IO).launch { dao.insert(fire) }
+        CoroutineScope(Dispatchers.IO).launch {
+            dao.insert(fire)
+            Log.d(TAG, "AHBSKANSIKJANKSNAKSJNAJKSNKJANSKJANKSNAKHBNSAHHBSKAHBSKAHBSKHABKHSBAKHSBKAHBSKHABSKHABSKHABSKHABSKHABKHSABKH")
+        }
     }
 
     override fun getAllFires(onFinished: (List<FireParceLable>) -> Unit) {
@@ -61,8 +80,7 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
 
     override fun insertFires(fires: List<FireParceLable>, onFinished: (List<FireParceLable>) -> Unit) {
         CoroutineScope(Dispatchers.IO).launch {
-            val history = fires.map { FireRoom(it.uuid, it.fireKey, it.name, it.cartaoCidadao, it.distrito,
-                it.conselho, it.frequesia, it.data, it.hora, it.fotografia, it.isRegistry, it.lng, it.lat, it.status, it.distance, it.man, it.terrestrial, it.aerial) }
+            val history = fires.map { FireRoom(it.uuid, it.fireKey, it.name, it.cartaoCidadao, it.distrito, it.conselho, it.frequesia, it.data, it.hora, it.fotografia, it.isRegistry, it.lng, it.lat, it.status, it.distance, it.man, it.terrestrial, it.aerial) }
             dao.insertAll(history)
             onFinished(fires)
         }
