@@ -4,10 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cm_recurso.R
 import com.example.cm_recurso.databinding.FragmentFiresListBinding
@@ -20,7 +21,7 @@ import kotlinx.coroutines.launch
 class FiresListFragment() : Fragment() {
     private lateinit var binding: FragmentFiresListBinding
     private lateinit var firesViewModel : FiresListViewModel
-    private val myAdapter = FireListAdapter(onClick = ::onItemClick)
+    private val myAdapter = FireListAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,6 +39,7 @@ class FiresListFragment() : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        districtNames()
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = myAdapter
         firesViewModel.getAllFires { updateList(it) }
@@ -49,9 +51,42 @@ class FiresListFragment() : Fragment() {
         }
     }
 
-    private fun onItemClick(fire: FireParceLable) {
-        val bundle = bundleOf("fire" to fire)
-        findNavController().navigate(R.id.action_nav_fires_list_to_fireDetailsFragment, bundle)
+    private fun districtNames(){
+        val spinner: Spinner = binding.spinner
+
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener  {
+            override fun onItemSelected(adapterView: AdapterView<*>?, view: View, i: Int, l: Long) {
+                updateList(getFiresByDistrict(spinner.selectedItem.toString()))
+            }
+
+            override fun onNothingSelected(adapterView: AdapterView<*>?) {
+                return
+            }
+        }
+
+        ArrayAdapter.createFromResource(
+            requireActivity(),
+            R.array.district_list,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spinner.adapter = adapter
+        }
+    }
+
+    fun getFiresByDistrict(district:String): List<FireParceLable> {
+        if(district == "Todos os Distritos") {
+            return firesViewModel.getAllFiresList()
+        }
+
+        val fires : MutableList<FireParceLable> = mutableListOf()
+        for(fire in firesViewModel.getAllFiresList()) {
+            if(fire.distrito == district) {
+                fires.add(fire)
+            }
+        }
+
+        return fires
     }
 
     override fun onDestroyView() {

@@ -48,4 +48,13 @@
     <string name="risk_very_high">Risco muito Elevado</string>
     <string name="risk_max">Risco máximo</string>
 
+    <string-array name="district_list">
+        <item>Todos os Distritos</item>
+        <item>Braga</item>
+        <item>Faro</item>
+        <item>Leiria</item>
+        <item>Lisboa</item>
+        <item>Porto</item>
+    </string-array>
+
 </resources>
