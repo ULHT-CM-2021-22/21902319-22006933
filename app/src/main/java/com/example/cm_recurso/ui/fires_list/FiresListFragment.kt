@@ -23,7 +23,7 @@ import kotlinx.coroutines.launch
 class FiresListFragment() : Fragment() {
     private lateinit var binding: FragmentFiresListBinding
     private lateinit var firesViewModel : FiresListViewModel
-    private val myAdapter = FireListAdapter(onClick = ::onItemClick)
+    private val adapter = FireListAdapter(onClick = ::onItemClick)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,30 +41,20 @@ class FiresListFragment() : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        districtNames()
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerView.adapter = myAdapter
+        binding.recyclerView.adapter = adapter
+        setupSpinner()
         firesViewModel.getAllFires { updateList(it) }
     }
 
     private fun updateList(fireList : List<FireParceLable>){
         CoroutineScope(Dispatchers.Main).launch {
-            myAdapter.updateItems(fireList)
+            adapter.updateItems(fireList)
         }
     }
 
-    private fun districtNames(){
+    private fun setupSpinner() {
         val spinner: Spinner = binding.spinner
-
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener  {
-            override fun onItemSelected(adapterView: AdapterView<*>?, view: View, i: Int, l: Long) {
-                updateList(firesViewModel.getFiresByDistrict(spinner.selectedItem.toString()))
-            }
-
-            override fun onNothingSelected(adapterView: AdapterView<*>?) {
-                return
-            }
-        }
 
         ArrayAdapter.createFromResource(
             requireActivity(),
@@ -74,6 +64,19 @@ class FiresListFragment() : Fragment() {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinner.adapter = adapter
         }
+
+        spinner.setOnItemSelectedListener(
+            object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, i: Int, l: Long) {
+                    updateList(firesViewModel.getFiresByDistrict(spinner.selectedItem.toString()))
+                }
+
+                override fun onNothingSelected(adapterView: AdapterView<*>?) {
+                    return
+                }
+            }
+        )
+
     }
 
     private fun onItemClick(fire: FireParceLable) {
