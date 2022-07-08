@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cm_recurso.R
 import com.example.cm_recurso.databinding.FragmentFiresListBinding
@@ -21,7 +23,7 @@ import kotlinx.coroutines.launch
 class FiresListFragment() : Fragment() {
     private lateinit var binding: FragmentFiresListBinding
     private lateinit var firesViewModel : FiresListViewModel
-    private val myAdapter = FireListAdapter()
+    private val myAdapter = FireListAdapter(onClick = ::onItemClick)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -87,6 +89,11 @@ class FiresListFragment() : Fragment() {
         }
 
         return fires
+    }
+
+    private fun onItemClick(fire: FireParceLable) {
+        val bundle = bundleOf("fire" to fire)
+        findNavController().navigate(R.id.action_nav_fires_list_to_fireDetailsFragment, bundle)
     }
 
     override fun onDestroyView() {

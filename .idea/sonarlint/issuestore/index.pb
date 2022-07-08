@@ -64,8 +64,6 @@ z
 Japp/src/main/java/com/example/cm_recurso/ui/dashboard/DashboardFragment.kt,4\9\492799979a2e096540b7007aa2dbf1db76f68feb
 {
 Kapp/src/main/java/com/example/cm_recurso/ui/dashboard/DashboardViewModel.kt,1\4\149849feb25de377b5d533d2c4f5ccf0637847ea
-|
-Lapp/src/main/java/com/example/cm_recurso/ui/fires_list/FiresListViewModel.kt,8\6\86ff7f6bbcd2320f66049d229799ade210536bfc
 n
 >app/src/main/java/com/example/cm_recurso/ui/fires_map/Place.kt,a\5\a5978903d64152b7b3f78427460b88739682542b
 y

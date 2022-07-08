@@ -18,4 +18,8 @@ class FiresListViewModel(application: Application) : AndroidViewModel(applicatio
             repository.getAllFires(callback)
         }
     }
+
+    fun getAllFiresList(): List<FireParceLable> {
+        return repository.getAllFiresList()
+    }
 }
