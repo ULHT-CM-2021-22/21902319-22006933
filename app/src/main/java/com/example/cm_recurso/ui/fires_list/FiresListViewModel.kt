@@ -22,4 +22,19 @@ class FiresListViewModel(application: Application) : AndroidViewModel(applicatio
     fun getAllFiresList(): List<FireParceLable> {
         return repository.getAllFiresList()
     }
+
+    fun getFiresByDistrict(district:String): List<FireParceLable> {
+        if(district == "Todos os Distritos") {
+            return getAllFiresList()
+        }
+
+        val fires : MutableList<FireParceLable> = mutableListOf()
+        for(fire in getAllFiresList()) {
+            if(fire.distrito == district) {
+                fires.add(fire)
+            }
+        }
+
+        return fires
+    }
 }

@@ -70,3 +70,9 @@ y
 Iapp/src/main/java/com/example/cm_recurso/ui/fires_map/FiresMapFragment.kt,7\e\7e55f6ebe0b119b048a21be118471968fdb5b023
 z
 Japp/src/main/java/com/example/cm_recurso/ui/fires_map/FiresMapViewModel.kt,a\3\a35470aff3cfa96736034225e15bb3d340bc36b9
+y
+Iapp/src/main/java/com/example/cm_recurso/ui/fires_list/FireListAdapter.kt,a\b\abec090ae219adc4664e94bec736013d633a56db
+
+Oapp/src/main/java/com/example/cm_recurso/ui/fire_details/FireDetailsFragment.kt,e\2\e20588f477d2d7cd9b98ef51e7985aa3fc1c9dbd
+h
+8app/src/main/java/com/example/cm_recurso/MainActivity.kt,2\2\228d1fda46bdde94e0d7b2948e4761ba0a240dbb

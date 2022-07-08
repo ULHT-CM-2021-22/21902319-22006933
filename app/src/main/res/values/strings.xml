@@ -12,9 +12,6 @@
     <string name="menu_fires_map">Mapa</string>
     <string name="menu_fire_registry">Registo de incêndios</string>
 
-    <string name="fires_list_button">Lista</string>
-    <string name="fires_map_button">Mapa</string>
-
     <string name="dashboard_risk_nacional">Risco nacional</string>
     <string name="dashboard_risk_local">Risco zona</string>
     <string name="dashboard_fires_total">Total de incêndios</string>
@@ -39,8 +36,10 @@
     <string name="neww_fire_name">Nome</string>
     <string name="neww_fire_fiscalnumber">Cartão de cidadão</string>
     <string name="neww_fire_district">Distrito</string>
+    <string name="neww_fire_district_filter">Distrito:</string>
     <string name="neww_fire_date">Data</string>
     <string name="neww_fire_photo">Fotografia</string>
+    <string name="neww_fire_filter">Filtro</string>
 
     <string name="risk_low">Risco reduzido</string>
     <string name="risk_moderate">Risco moderado</string>

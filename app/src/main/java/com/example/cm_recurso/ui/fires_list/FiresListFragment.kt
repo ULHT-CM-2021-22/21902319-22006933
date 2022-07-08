@@ -58,7 +58,7 @@ class FiresListFragment() : Fragment() {
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener  {
             override fun onItemSelected(adapterView: AdapterView<*>?, view: View, i: Int, l: Long) {
-                updateList(getFiresByDistrict(spinner.selectedItem.toString()))
+                updateList(firesViewModel.getFiresByDistrict(spinner.selectedItem.toString()))
             }
 
             override fun onNothingSelected(adapterView: AdapterView<*>?) {
@@ -74,21 +74,6 @@ class FiresListFragment() : Fragment() {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinner.adapter = adapter
         }
-    }
-
-    fun getFiresByDistrict(district:String): List<FireParceLable> {
-        if(district == "Todos os Distritos") {
-            return firesViewModel.getAllFiresList()
-        }
-
-        val fires : MutableList<FireParceLable> = mutableListOf()
-        for(fire in firesViewModel.getAllFiresList()) {
-            if(fire.distrito == district) {
-                fires.add(fire)
-            }
-        }
-
-        return fires
     }
 
     private fun onItemClick(fire: FireParceLable) {
