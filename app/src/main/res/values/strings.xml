@@ -40,6 +40,7 @@
     <string name="neww_fire_date">Data</string>
     <string name="neww_fire_photo">Fotografia</string>
     <string name="neww_fire_filter">Filtro</string>
+    <string name="neww_fire_observations">Observações</string>
 
     <string name="risk_low">Risco reduzido</string>
     <string name="risk_moderate">Risco moderado</string>
@@ -49,6 +50,15 @@
 
     <string-array name="district_list">
         <item>Todos os Distritos</item>
+        <item>Braga</item>
+        <item>Faro</item>
+        <item>Leiria</item>
+        <item>Lisboa</item>
+        <item>Porto</item>
+    </string-array>
+
+    <string-array name="district_list_new">
+        <item>Selecione o distrito</item>
         <item>Braga</item>
         <item>Faro</item>
         <item>Leiria</item>

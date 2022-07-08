@@ -36,7 +36,6 @@ class DashboardFragment : Fragment() {
         binding.firesTerrestrial.text = statistics["totalTerrestrial"]
     }
 
-
     override fun onDestroyView() {
         super.onDestroyView()
     }

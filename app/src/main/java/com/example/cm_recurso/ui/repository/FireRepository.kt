@@ -13,7 +13,6 @@ class FireRepository private constructor(private val context: Context,
 
     private var fires : List<FireParceLable> = emptyList()
 
-
     fun getAllFires(onFinished: (List<FireParceLable>) -> Unit) {
         if(ConnectivityUtil.isOnline(context)) {
             remote.getAllFires { history ->
@@ -58,7 +57,6 @@ class FireRepository private constructor(private val context: Context,
         }
     }
 
-    //Funções para estatisticas
     fun getActiveFires() : List<FireParceLable>{
         return fires
     }
@@ -86,7 +84,6 @@ class FireRepository private constructor(private val context: Context,
         return districtWithMostFiresName
     }
 
-    //Singleton
     companion object {
 
         private var instance: FireRepository? = null

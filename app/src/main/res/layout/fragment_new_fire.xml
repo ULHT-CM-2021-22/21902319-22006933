@@ -7,10 +7,14 @@
     tools:context=".ui.new_fire.NewFireFragment">
 
     <ScrollView
-        android:layout_width="match_parent"
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -82,42 +86,23 @@
                                 android:textSize="16sp" />
                         </com.google.android.material.textfield.TextInputLayout>
 
-                        <com.google.android.material.textfield.TextInputLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="50dp"
+                            android:background="@color/white"
+                            android:orientation="vertical"
+                            android:padding="16dp"
                             android:layout_marginTop="16dp">
 
-                            <EditText
-                                android:id="@+id/new_fire_district"
+                            <Spinner
+                                android:id="@+id/spinner"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@color/white"
-                                android:hint="@string/neww_fire_district"
-                                android:inputType="text"
-                                android:maxLines="1"
-                                android:textColor="@android:color/black"
-                                android:textSize="16sp" />
-                        </com.google.android.material.textfield.TextInputLayout>
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textAlignment="textStart"
+                                android:layout_gravity="start"/>
 
-                        <TextView
-                            android:id="@+id/new_fire_date_label"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="10sp"
-                            android:text="@string/neww_fire_date"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
-
-                        <DatePicker
-                            android:id="@+id/dpDate"
-                            android:layout_width="match_parent"
-                            android:layout_height="128dp"
-                            android:layout_weight="1"
-                            android:calendarViewShown="false"
-                            android:datePickerMode="spinner" />
+                        </LinearLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
@@ -125,31 +110,86 @@
                             android:layout_marginTop="16dp">
 
                             <EditText
-                                android:id="@+id/new_fire_photo"
+                                android:id="@+id/new_fire_observations"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="@color/white"
-                                android:hint="@string/neww_fire_photo"
+                                android:hint="@string/neww_fire_observations"
                                 android:inputType="text"
                                 android:maxLines="1"
                                 android:textColor="@android:color/black"
                                 android:textSize="16sp" />
                         </com.google.android.material.textfield.TextInputLayout>
 
-                        <Button
-                            android:id="@+id/button_submit_form"
-                            android:layout_width="210dp"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="24dp"
-                            android:layout_marginBottom="16dp"
-                            android:paddingLeft="16dp"
-                            android:paddingRight="16dp"
-                            android:text="@string/neww_fire_registry"
-                            android:textAllCaps="false"
-                            android:textColor="#fff"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:background="@color/peach_500"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.25"
+                                android:background="@color/peach_500"
+                                android:orientation="vertical">
+
+                                <ImageButton
+                                    android:id="@+id/button_add_photo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="24dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:src="@drawable/ic_new_fire_camera" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:background="@color/peach_500"
+                                android:orientation="vertical">
+
+                                <Button
+                                    android:id="@+id/button_submit_form"
+                                    android:layout_width="210dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="24dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:paddingLeft="16dp"
+                                    android:paddingRight="16dp"
+                                    android:text="@string/neww_fire_registry"
+                                    android:textAllCaps="false"
+                                    android:textColor="#fff"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.25"
+                                android:background="@color/peach_500"
+                                android:orientation="vertical">
+
+                                <ImageButton
+                                    android:id="@+id/button_fast_submit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="24dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:src="@drawable/ic_new_fire_fast" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
 
