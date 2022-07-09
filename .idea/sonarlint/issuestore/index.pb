@@ -1,10 +1,4 @@
 
-u
-Eapp/src/main/java/com/example/cm_recurso/ui/location/FusedLocation.kt,7\9\798156f88fdabac5cf790804459a7f1116a14d98
-Å
-Qapp/src/main/java/com/example/cm_recurso/ui/location/OnLocationChangedListener.kt,8\d\8d90c4c145da18e9b560100522bae8ab2d6b9b3b
-z
-Japp/src/main/java/com/example/cm_recurso/ui/fires_list/MyFireViewholder.kt,1\3\1322ba7f0d1a83ce4c5eea6215a29e3c6156d9ff
 k
 ;app/src/test/java/com/example/cm_recurso/ExampleUnitTest.kt,b\b\bb620972412e083ca549caba34c180fc975dbb80
 z
@@ -32,13 +26,9 @@ Iapp/src/main/java/com/example/cm_recurso/ui/repository/RetrofitBuilder.kt,f\5\
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 A
 gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 x
 Happ/src/main/java/com/example/cm_recurso/ui/new_fire/NewFireViewModel.kt,e\2\e2a00d97183414dc66e12b04acbafb3f62ffcc03
-y
-Iapp/src/main/java/com/example/cm_recurso/ui/fires_list/FireListAdapter.kt,a\b\abec090ae219adc4664e94bec736013d633a56db
 r
 Bapp/src/main/java/com/example/cm_recurso/location/FusedLocation.kt,9\e\9ee071ae4316f93f5f6bb4022647f5a74b03a22b

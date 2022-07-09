@@ -20,13 +20,14 @@ import com.example.cm_recurso.model.fire.FireApi
 import com.example.cm_recurso.model.fire.FireDataBase
 import com.example.cm_recurso.model.fire.FireModelRoom
 import com.example.cm_recurso.ui.location.FusedLocation
+import com.example.cm_recurso.ui.location.OnLocationChangedListener
 import com.example.cm_recurso.ui.repository.FireRepository
 import com.example.cm_recurso.ui.repository.RetrofitBuilder
 import com.google.android.material.navigation.NavigationView
 
 var changeZoneRisk = true
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnLocationChangedListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
@@ -138,5 +139,9 @@ class MainActivity : AppCompatActivity() {
 
     public fun setRiskZone(risk: Boolean) {
         changeZoneRisk = risk
+    }
+
+    override fun onLocationChanged(latitude: Double, longitude: Double) {
+        //
     }
 }
