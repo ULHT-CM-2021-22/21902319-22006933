@@ -25,7 +25,11 @@
         android:id="@+id/nav_fires_map"
         android:name="com.example.cm_recurso.ui.fires_map.FiresMapFragment"
         android:label="@string/menu_fires_map"
-        tools:layout="@layout/fragment_fires_map" />
+        tools:layout="@layout/fragment_fires_map" >
+        <action
+            android:id="@+id/action_nav_fires_map_to_fireDetailsFragment"
+            app:destination="@id/fireDetailsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_new_fire"
