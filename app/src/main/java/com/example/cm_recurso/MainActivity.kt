@@ -1,14 +1,16 @@
 package com.example.cm_recurso
 
+import android.content.Intent
+import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.graphics.Color
+import android.os.BatteryManager
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.Menu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -19,10 +21,10 @@ import com.example.cm_recurso.databinding.ActivityMainBinding
 import com.example.cm_recurso.model.fire.FireApi
 import com.example.cm_recurso.model.fire.FireDataBase
 import com.example.cm_recurso.model.fire.FireModelRoom
+import com.example.cm_recurso.model.fire.FireService
 import com.example.cm_recurso.ui.location.FusedLocation
 import com.example.cm_recurso.ui.repository.FireRepository
 import com.example.cm_recurso.ui.repository.RetrofitBuilder
-import com.google.android.gms.location.*
 import com.google.android.material.navigation.NavigationView
 
 
@@ -39,12 +41,10 @@ class MainActivity : AppCompatActivity() {
         "#D7EC0C",
         "#F4C63E",
         "#B36C02",
-        "#BF2222")
+        "#BF2222",
+        "#828384")
 
     private val LOCATION_PERMISSION_REQ_CODE = 1000;
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
-    private var latitude: Double = 0.0
-    private var longitude: Double = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,6 +77,7 @@ class MainActivity : AppCompatActivity() {
             getString(R.string.risk_high),
             getString(R.string.risk_very_high),
             getString(R.string.risk_max),
+            ""
         )
 
     }
@@ -98,40 +99,24 @@ class MainActivity : AppCompatActivity() {
 
     private val ativo = object: Runnable {
         override fun run() {
-            num+= 1
-            if (num == 5) {
-                num = 0;
-            }
-            binding.appBarMain.zoneRisk.setBackgroundColor(Color.parseColor(riskColor[num]))
-            binding.appBarMain.zoneRisk.text = risk[num]
-            handler.postDelayed(this, 5000)
-        }
-    }
 
-    private fun getCurrentLocation() {
+            val bm = applicationContext.getSystemService(BATTERY_SERVICE) as BatteryManager
+            val batLevel:Int = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
 
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQ_CODE)
-            return
-        }
-
-        fusedLocationClient.lastLocation.addOnSuccessListener { location ->
-            latitude = location.latitude
-            longitude = location.longitude
-        }.addOnFailureListener {
-            Toast.makeText(this, "Failed on getting current location", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        when (requestCode) {
-            LOCATION_PERMISSION_REQ_CODE -> {
-                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // Premission granted
-                } else {
-                    Toast.makeText(this, "You need to grant permission to access location", Toast.LENGTH_SHORT).show()
+            if (batLevel <= 20) {
+                binding.appBarMain.zoneRisk.setBackgroundColor(Color.parseColor(riskColor[5]))
+                binding.appBarMain.zoneRisk.text = risk[5]
+                handler.postDelayed(this, 5000)
+            } else {
+                num+= 1
+                if (num == 5) {
+                    num = 0;
                 }
+                binding.appBarMain.zoneRisk.setBackgroundColor(Color.parseColor(riskColor[num]))
+                binding.appBarMain.zoneRisk.text = risk[num]
+                handler.postDelayed(this, 5000)
             }
+
         }
     }
 }
