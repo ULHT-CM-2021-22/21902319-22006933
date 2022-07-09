@@ -36,4 +36,8 @@
         android:id="@+id/fireDetailsFragment"
         android:name="com.example.cm_recurso.ui.fire_details.FireDetailsFragment"
         android:label="FireDetailsFragment" />
+    <fragment
+        android:id="@+id/settingsFragment2"
+        android:name="com.example.cm_recurso.ui.settings.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>

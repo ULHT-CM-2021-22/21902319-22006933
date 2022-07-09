@@ -46,7 +46,6 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
 
         CoroutineScope(Dispatchers.IO).launch {
             dao.insert(fire)
-            Log.d(TAG, "AHBSKANSIKJANKSNAKSJNAJKSNKJANSKJANKSNAKHBNSAHHBSKAHBSKAHBSKHABKHSBAKHSBKAHBSKHABSKHABSKHABSKHABSKHABKHSABKH")
         }
     }
 

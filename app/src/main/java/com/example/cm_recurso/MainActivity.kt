@@ -1,17 +1,15 @@
 package com.example.cm_recurso
 
-import android.content.Intent
-import android.content.IntentFilter
-import android.content.pm.PackageManager
 import android.graphics.Color
 import android.os.BatteryManager
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.Menu
-import android.widget.Toast
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.NavDeepLinkBuilder
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -21,12 +19,12 @@ import com.example.cm_recurso.databinding.ActivityMainBinding
 import com.example.cm_recurso.model.fire.FireApi
 import com.example.cm_recurso.model.fire.FireDataBase
 import com.example.cm_recurso.model.fire.FireModelRoom
-import com.example.cm_recurso.model.fire.FireService
 import com.example.cm_recurso.ui.location.FusedLocation
 import com.example.cm_recurso.ui.repository.FireRepository
 import com.example.cm_recurso.ui.repository.RetrofitBuilder
 import com.google.android.material.navigation.NavigationView
 
+var changeZoneRisk = true
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,7 +42,6 @@ class MainActivity : AppCompatActivity() {
         "#BF2222",
         "#828384")
 
-    private val LOCATION_PERMISSION_REQ_CODE = 1000;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,6 +84,21 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.action_settings -> {
+            val pendingIntent = NavDeepLinkBuilder(this.applicationContext)
+                .setGraph(R.navigation.mobile_navigation)
+                .setDestination(R.id.settingsFragment2)
+                .createPendingIntent()
+
+            pendingIntent.send()
+            true
+        }
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
+    }
+
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
@@ -103,7 +115,7 @@ class MainActivity : AppCompatActivity() {
             val bm = applicationContext.getSystemService(BATTERY_SERVICE) as BatteryManager
             val batLevel:Int = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
 
-            if (batLevel <= 20) {
+            if (batLevel <= 20 && changeZoneRisk) {
                 binding.appBarMain.zoneRisk.setBackgroundColor(Color.parseColor(riskColor[5]))
                 binding.appBarMain.zoneRisk.text = risk[5]
                 handler.postDelayed(this, 5000)
@@ -118,5 +130,13 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+    }
+
+    public fun getRiskZone(): Boolean {
+        return changeZoneRisk
+    }
+
+    public fun setRiskZone(risk: Boolean) {
+        changeZoneRisk = risk
     }
 }

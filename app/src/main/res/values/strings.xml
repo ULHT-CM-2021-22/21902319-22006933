@@ -48,6 +48,9 @@
     <string name="risk_very_high">Risco muito Elevado</string>
     <string name="risk_max">Risco máximo</string>
 
+    <string name="settings_title">Settings</string>
+    <string name="settings_riskzone_battery">Desactivar o risko de zona com bateria fraca</string>
+
     <string-array name="district_list">
         <item>Todos os Distritos</item>
         <item>Aveiro</item>
