@@ -1,7 +1,5 @@
 package com.example.cm_recurso.model.fire
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -42,7 +40,8 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
             lat = lat,
             lng = lng,
             status = status,
-            distance = distance)
+            distance = distance,
+            isRegistry = isRegistry)
 
         CoroutineScope(Dispatchers.IO).launch {
             dao.insert(fire)
@@ -71,7 +70,8 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
                     lat = it.lat,
                     lng = it.lng,
                     status = it.status,
-                    distance = it.distance
+                    distance = it.distance,
+                    isRegistry = "false"
                 )
             })
         }
@@ -113,9 +113,11 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
                     lat = it.lat,
                     lng = it.lng,
                     status = it.status,
-                    distance = it.distance
+                    distance = it.distance,
+                    isRegistry = it.isRegistry
                 )
             })
         }
     }
+
 }

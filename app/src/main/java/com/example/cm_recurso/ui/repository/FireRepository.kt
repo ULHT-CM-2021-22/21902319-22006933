@@ -3,9 +3,6 @@ package com.example.cm_recurso.ui.repository
 import android.content.Context
 import com.example.cm_recurso.model.fire.FireModel
 import com.example.cm_recurso.model.fire.FireParceLable
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class FireRepository private constructor(private val context: Context,
                                          private val local: FireModel,
@@ -15,11 +12,11 @@ class FireRepository private constructor(private val context: Context,
 
     fun getAllFires(onFinished: (List<FireParceLable>) -> Unit) {
         if(ConnectivityUtil.isOnline(context)) {
-            remote.getAllFires { history ->
+            remote.getAllFires { remote ->
                 local.deleteAllOperations { registers ->
-                    local.insertFires(history + registers) {
-                        fires = history + registers
-                        onFinished(history + registers)
+                    local.insertFires(remote + registers) {
+                        fires = remote + registers
+                        onFinished(remote + registers)
                     }
                 }
             }
@@ -31,57 +28,12 @@ class FireRepository private constructor(private val context: Context,
         }
     }
 
-    fun getAllRegistos(onFinished: (List<FireParceLable>) -> Unit) {
-        CoroutineScope(Dispatchers.IO).launch {
-            onFinished(fires)
-        }
-    }
-
     fun getAllFiresList() : List<FireParceLable>{
         return fires
     }
 
-    fun deleteFire(fire: FireParceLable, onSucess: (List<FireParceLable>) -> Unit) {
-        val firesFiltered : MutableList<FireParceLable> = mutableListOf()
-
-        for(fireInList in fires){
-            if(fireInList.uuid != fire.uuid && fireInList.isRegistry == "true"){
-                firesFiltered.add(fireInList)
-            }
-        }
-
-        local.deleteAllOperations {
-            local.insertFires(firesFiltered) {
-                onSucess(firesFiltered)
-            }
-        }
-    }
-
     fun getActiveFires() : List<FireParceLable>{
         return fires
-    }
-
-    fun getDistrictWithMostFires() : String {
-        val firesByDistrict : MutableMap<String, Int> = mutableMapOf()
-        var districtWithMostFiresName = "Distrito"
-        var districtWithMostFiresValue = 0
-
-        for (f in fires) {
-            if(firesByDistrict.containsKey(f.distrito)) {
-                firesByDistrict.put(f.distrito, firesByDistrict.getValue(f.distrito) + 1)
-            } else {
-                firesByDistrict.put(f.distrito, 1)
-            }
-        }
-
-        for(key in firesByDistrict.keys) {
-            if(firesByDistrict[key]!! > districtWithMostFiresValue) {
-                districtWithMostFiresName = key
-                districtWithMostFiresValue = firesByDistrict[key]!!
-            }
-        }
-
-        return districtWithMostFiresName
     }
 
     companion object {
