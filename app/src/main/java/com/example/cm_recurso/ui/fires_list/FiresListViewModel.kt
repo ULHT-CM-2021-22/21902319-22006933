@@ -28,6 +28,8 @@ class FiresListViewModel(application: Application) : AndroidViewModel(applicatio
     fun getFiresByDistrict(district:String, organize: String, currentLat: Double, curranteLng: Double): List<FireParceLable> {
 
         if(district.equals("Todos os Distritos")) {
+            val fires : MutableList<FireParceLable> = mutableListOf()
+            setListOrganize(fires)
             if (organize.equals("Decrescente")) {
                 organizeDecrescente(currentLat, curranteLng)
             }else{
@@ -86,11 +88,27 @@ class FiresListViewModel(application: Application) : AndroidViewModel(applicatio
         if (getListOrganize().isEmpty()) {
             setListOrganize(getAllFiresList())
         }
+        var mapAux: MutableMap<Double,FireParceLable> = mutableMapOf()
+
+        for (fire in getListOrganize()) {
+            val distance = defineDistance(currentLat, curranteLng, fire.lat, fire.lng)
+            mapAux.set(distance,fire)
+        }
+
+        val sorted = mapAux.toList().sortedByDescending { (key, value) -> key }.toMap()
+
+        val listAux : MutableList<FireParceLable> = mutableListOf()
+
+        for (fire in sorted) {
+            listAux.add(fire.value)
+        }
+
+        setListOrganize(listAux)
 
     }
 
     fun defineDistance(userLat:Double, userLng:Double, fireLat:Double, fireLng:Double):Double {
-        var earthRadiusKm = 6371;
+        var earthRadiusKm = 6371
 
         var dLat = degreesToRadians(userLat-fireLat)
         var dLon = degreesToRadians(userLng-fireLng)
@@ -105,7 +123,7 @@ class FiresListViewModel(application: Application) : AndroidViewModel(applicatio
     }
 
     fun degreesToRadians(degrees:Double):Double {
-        return degrees * Math.PI / 180;
+        return degrees * Math.PI / 180
     }
 
 }

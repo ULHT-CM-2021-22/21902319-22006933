@@ -33,8 +33,6 @@
         <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/layout/fragment_fireslist.xml" value="0.3958333333333333" />
         <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/layout/fragment_firesmap.xml" value="0.3958333333333333" />
         <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/layout/fragment_new_fire.xml" value="0.3958333333333333" />
-        <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/layout/fragment_settings.xml" value="0.31614583333333335" />
-        <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/layout/fragment_settings1.xml" value="0.35104166666666664" />
         <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/layout/item_fire.xml" value="0.31614583333333335" />
         <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/layout/item_fire1.xml" value="0.2703125" />
         <entry key="..\:/Lusofona/CM/CM_recurso/app/src/main/res/layout/nav_header_main.xml" value="0.3776041666666667" />
@@ -50,7 +48,7 @@
         <entry key="..\:/Users/Rafael/StudioProjects/CM_recurso/app/src/main/res/drawable/ic_menu_new_fire.xml" value="0.2885" />
         <entry key="..\:/Users/Rafael/StudioProjects/CM_recurso/app/src/main/res/layout/fragment_dashboard.xml" value="0.28958333333333336" />
         <entry key="..\:/Users/Rafael/StudioProjects/CM_recurso/app/src/main/res/layout/fragment_firedetails.xml" value="0.196875" />
-        <entry key="..\:/Users/Rafael/StudioProjects/CM_recurso/app/src/main/res/layout/fragment_fires_list.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/Rafael/StudioProjects/CM_recurso/app/src/main/res/layout/fragment_fires_list.xml" value="0.25" />
         <entry key="..\:/Users/Rafael/StudioProjects/CM_recurso/app/src/main/res/layout/fragment_fires_map.xml" value="0.28958333333333336" />
         <entry key="..\:/Users/Rafael/StudioProjects/CM_recurso/app/src/main/res/layout/fragment_new_fire.xml" value="0.28958333333333336" />
         <entry key="..\:/Users/Rafael/StudioProjects/CM_recurso/app/src/main/res/layout/item_fire.xml" value="0.28958333333333336" />

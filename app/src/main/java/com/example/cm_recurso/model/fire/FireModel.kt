@@ -1,7 +1,6 @@
 package com.example.cm_recurso.model.fire
 
 abstract class FireModel {
-    //Funções utilizadas em FireRoomModel e FireRetrofit
     abstract fun addFire(
         name: String,
         cartaoCidadao: String,

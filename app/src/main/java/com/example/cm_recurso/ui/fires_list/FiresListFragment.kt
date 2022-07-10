@@ -37,9 +37,10 @@ class FiresListFragment() : Fragment(), OnLocationChangedListener{
         val view = inflater.inflate(
             R.layout.fragment_fires_list, container, false
         )
-        FusedLocation.registerListener(this)
+
         firesViewModel = ViewModelProvider(this).get(FiresListViewModel::class.java)
         binding = FragmentFiresListBinding.bind(view)
+        FusedLocation.registerListener(this)
         return binding.root
     }
 
@@ -48,7 +49,8 @@ class FiresListFragment() : Fragment(), OnLocationChangedListener{
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
         setupSpinner()
-        firesViewModel.getAllFires { updateList(it) }
+        //spinnerOrganize()
+        firesViewModel.getAllFires { updateList(it)}
     }
 
     private fun updateList(fireList : List<FireParceLable>){
@@ -92,7 +94,21 @@ class FiresListFragment() : Fragment(), OnLocationChangedListener{
             }
         )
 
+        spinnerOrganize.setOnItemSelectedListener(
+            object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, i: Int, l: Long) {
+                    updateList(firesViewModel.getFiresByDistrict(spinnerDistrict.selectedItem.toString(),
+                        spinnerOrganize.selectedItem.toString(), currentLat, currentLng))
+                }
+
+                override fun onNothingSelected(adapterView: AdapterView<*>?) {
+                    return
+                }
+            }
+        )
+
     }
+
 
     private fun onItemClick(fire: FireParceLable) {
         val bundle = bundleOf("fire" to fire)

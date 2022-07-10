@@ -1,8 +1,6 @@
 package com.example.cm_recurso.ui.fires_map
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
