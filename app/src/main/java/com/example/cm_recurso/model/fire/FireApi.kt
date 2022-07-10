@@ -7,7 +7,6 @@ import retrofit2.Retrofit
 
 class FireApi(retrofit: Retrofit) : FireModel() {
 
-    private val TAG = FireApi::class.java.simpleName
     private val service = retrofit.create(FireService::class.java)
 
 
@@ -32,7 +31,8 @@ class FireApi(retrofit: Retrofit) : FireModel() {
                     lat = it.lat,
                     lng = it.lng,
                     status = it.status,
-                    distance = ""
+                    distance = "",
+                    isRegistry = "false"
                 )
             })
         }

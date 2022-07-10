@@ -2,10 +2,14 @@ package com.example.cm_recurso.ui.new_fire
 
 import android.app.Activity
 import android.content.ContentResolver
+import android.content.ContentValues.TAG
 import android.content.Intent
+import android.location.Geocoder
+import android.location.LocationManager
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,10 +22,11 @@ import com.example.cm_recurso.R
 import com.example.cm_recurso.databinding.FragmentNewFireBinding
 import com.example.cm_recurso.model.fire.FireDataBase
 import com.example.cm_recurso.model.fire.FireModelRoom
+import com.example.cm_recurso.ui.location.OnLocationChangedListener
 import java.text.SimpleDateFormat
 import java.util.*
 
-class NewFireFragment : Fragment() {
+class NewFireFragment : Fragment(), OnLocationChangedListener {
     private lateinit var binding: FragmentNewFireBinding
     private lateinit var newFireViewModel : NewFireViewModel
     private lateinit var firemodelroom : FireModelRoom
@@ -30,8 +35,8 @@ class NewFireFragment : Fragment() {
     private var fotoURI: Uri? = null
     val PICK_IMAGE = 1
 
-    private val lat = 0.0
-    private val lng = 0.0
+    private var lat = 0.0
+    private var lng = 0.0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,6 +58,10 @@ class NewFireFragment : Fragment() {
         binding.buttonAddPhoto.setOnClickListener{
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             startActivityForResult(gallery, PICK_IMAGE)
+        }
+
+        binding.buttonFastSubmit.setOnClickListener{
+            reportaJa()
         }
 
         return binding.root
@@ -117,6 +126,44 @@ class NewFireFragment : Fragment() {
         fotoSelected = false
     }
 
+    private fun reportaJa() {
+        val date = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
+        val hour = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
+
+        firemodelroom.addFire(
+            name = "ReportaJa",
+            cartaoCidadao = "000000000",
+            distrito = getAddress(lat, lng),
+            conselho = "",
+            frequesia = "",
+            data = date,
+            hora = hour,
+            status = "Por confirmar",
+            fotografia = "",
+            distance = "",
+            man = "0",
+            terrestrial = "0",
+            aerial = "0",
+            lat = lat,
+            lng = lng,
+            isRegistry = "true"
+        )
+
+        Toast.makeText(activity, "Incêndio inserido", Toast.LENGTH_SHORT).show()
+
+        binding.newFirePersonCc.text.clear()
+        binding.newFirePersonName.text.clear()
+        binding.newFireObservations.text.clear()
+        binding.spinner.setSelection(0)
+        fotoSelected = false
+    }
+
+    private fun getAddress(lat: Double, lng: Double): String {
+        val geocoder = Geocoder(context)
+        val list = geocoder.getFromLocation(lat, lng, 1)
+        if (list.size == 0) return "" else return list[0].locality
+    }
+
     private fun populateSpinner(){
         val spinner: Spinner = binding.spinner
         ArrayAdapter.createFromResource(
@@ -155,7 +202,8 @@ class NewFireFragment : Fragment() {
             .build()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+    override fun onLocationChanged(latitude: Double, longitude: Double) {
+        lat = latitude
+        lng = longitude
     }
 }

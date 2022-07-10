@@ -21,7 +21,7 @@ data class FireParceLable(
     val lat: Double,
     val lng: Double,
     val status: String,
-    var isRegistry : String = "false",
+    var isRegistry : String,
     val distance: String
 ) : Parcelable {
 

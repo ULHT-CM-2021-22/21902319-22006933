@@ -14,21 +14,16 @@ class FusedLocation private constructor(context: Context) : LocationCallback() {
 
     private val TIME_BETWEEN_UPDATES = 1 * 1000L
 
-    private var locationRequest = com.google.android.gms.location.LocationRequest.create().apply {
-        priority = com.google.android.gms.location.LocationRequest.PRIORITY_HIGH_ACCURACY
+    private var locationRequest = LocationRequest.create().apply {
+        priority = LocationRequest.PRIORITY_HIGH_ACCURACY
         interval = TIME_BETWEEN_UPDATES
     }
 
     private var client = FusedLocationProviderClient(context)
 
     init {
-        val locationSettingsRequest = LocationSettingsRequest.Builder()
-            .addLocationRequest(locationRequest)
-            .build()
-
-        LocationServices.getSettingsClient(context)
-            .checkLocationSettings(locationSettingsRequest)
-
+        val locationSettingsRequest = LocationSettingsRequest.Builder().addLocationRequest(locationRequest).build()
+        LocationServices.getSettingsClient(context).checkLocationSettings(locationSettingsRequest)
         Looper.myLooper()?.let { client.requestLocationUpdates(locationRequest, this, it) }
     }
 

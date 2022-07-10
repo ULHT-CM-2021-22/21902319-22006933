@@ -17,9 +17,14 @@ data class FireContent(
     val lng:Double,
 )
 
+data class ZoneStatus(val districtStatus:String)
+
 data class FireData(val data:List<FireContent>)
 
 interface FireService {
     @GET("/new/fires")
     suspend fun getAllFires():FireData
+
+    @GET("/v1/risk?concelho=Lisboa")
+    suspend fun getZoneRisk():ZoneStatus
 }
