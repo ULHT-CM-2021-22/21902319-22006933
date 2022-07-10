@@ -57,6 +57,12 @@
         <item>Porto</item>
     </string-array>
 
+    <string-array name="organize_list">
+        <item>Ordenar</item>
+        <item>Crescente</item>
+        <item>Decrescente</item>
+    </string-array>
+
     <string-array name="district_list_new">
         <item>Selecione o distrito</item>
         <item>Braga</item>
