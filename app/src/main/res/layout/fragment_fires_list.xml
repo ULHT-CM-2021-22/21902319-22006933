@@ -67,7 +67,16 @@
 
                 <Spinner
                     android:gravity="center_horizontal"
-                    android:id="@+id/spinner"
+                    android:id="@+id/spinnerDistrict"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="20sp"/>
+
+                <Spinner
+                    android:gravity="center_horizontal"
+                    android:id="@+id/spinnerOrganize"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"

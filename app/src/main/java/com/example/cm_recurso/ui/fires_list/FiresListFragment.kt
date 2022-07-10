@@ -15,14 +15,18 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cm_recurso.R
 import com.example.cm_recurso.databinding.FragmentFiresListBinding
 import com.example.cm_recurso.model.fire.FireParceLable
+import com.example.cm_recurso.ui.location.FusedLocation
+import com.example.cm_recurso.ui.location.OnLocationChangedListener
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-class FiresListFragment() : Fragment() {
+class FiresListFragment() : Fragment(), OnLocationChangedListener{
     private lateinit var binding: FragmentFiresListBinding
     private lateinit var firesViewModel : FiresListViewModel
+    private var currentLat = 0.0
+    private var currentLng = 0.0
     private val adapter = FireListAdapter(onClick = ::onItemClick)
 
     override fun onCreateView(
@@ -33,9 +37,9 @@ class FiresListFragment() : Fragment() {
         val view = inflater.inflate(
             R.layout.fragment_fires_list, container, false
         )
+        FusedLocation.registerListener(this)
         firesViewModel = ViewModelProvider(this).get(FiresListViewModel::class.java)
         binding = FragmentFiresListBinding.bind(view)
-
         return binding.root
     }
 
@@ -54,7 +58,8 @@ class FiresListFragment() : Fragment() {
     }
 
     private fun setupSpinner() {
-        val spinner: Spinner = binding.spinner
+        val spinnerDistrict: Spinner = binding.spinnerDistrict
+        val spinnerOrganize: Spinner = binding.spinnerOrganize
 
         ArrayAdapter.createFromResource(
             requireActivity(),
@@ -62,13 +67,23 @@ class FiresListFragment() : Fragment() {
             android.R.layout.simple_spinner_item
         ).also { adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            spinner.adapter = adapter
+            spinnerDistrict.adapter = adapter
         }
 
-        spinner.setOnItemSelectedListener(
+        ArrayAdapter.createFromResource(
+            requireActivity(),
+            R.array.organize_list,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spinnerOrganize.adapter = adapter
+        }
+
+        spinnerDistrict.setOnItemSelectedListener(
             object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, i: Int, l: Long) {
-                    updateList(firesViewModel.getFiresByDistrict(spinner.selectedItem.toString()))
+                        updateList(firesViewModel.getFiresByDistrict(spinnerDistrict.selectedItem.toString(),
+                            spinnerOrganize.selectedItem.toString(), currentLat, currentLng))
                 }
 
                 override fun onNothingSelected(adapterView: AdapterView<*>?) {
@@ -86,6 +101,11 @@ class FiresListFragment() : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+    }
+
+    override fun onLocationChanged(latitude: Double, longitude: Double) {
+        currentLat = latitude
+        currentLng = longitude
     }
 
 }
