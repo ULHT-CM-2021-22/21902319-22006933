@@ -24,7 +24,9 @@ class FusedLocation private constructor(context: Context) : LocationCallback() {
     init {
         val locationSettingsRequest = LocationSettingsRequest.Builder().addLocationRequest(locationRequest).build()
         LocationServices.getSettingsClient(context).checkLocationSettings(locationSettingsRequest)
-        Looper.myLooper()?.let { client.requestLocationUpdates(locationRequest, this, it) }
+        Looper.myLooper()?.let {
+            client.requestLocationUpdates(locationRequest, this, it)
+        }
     }
 
     override fun onLocationResult(locationResult: LocationResult) {

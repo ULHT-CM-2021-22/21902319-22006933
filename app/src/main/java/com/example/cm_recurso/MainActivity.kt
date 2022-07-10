@@ -1,5 +1,7 @@
 package com.example.cm_recurso
 
+import android.Manifest.permission.ACCESS_FINE_LOCATION
+import android.content.pm.PackageManager
 import android.graphics.Color
 import android.os.BatteryManager
 import android.os.Bundle
@@ -8,6 +10,8 @@ import android.os.Looper
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavDeepLinkBuilder
 import androidx.navigation.findNavController
@@ -23,6 +27,9 @@ import com.example.cm_recurso.ui.location.FusedLocation
 import com.example.cm_recurso.ui.location.OnLocationChangedListener
 import com.example.cm_recurso.ui.repository.FireRepository
 import com.example.cm_recurso.ui.repository.RetrofitBuilder
+import com.fondesa.kpermissions.allGranted
+import com.fondesa.kpermissions.extension.permissionsBuilder
+import com.fondesa.kpermissions.extension.send
 import com.google.android.material.navigation.NavigationView
 
 var changeZoneRisk = true
@@ -51,6 +58,10 @@ class MainActivity : AppCompatActivity(), OnLocationChangedListener {
             FireApi(RetrofitBuilder.getInstance("https://api-dev.fogos.pt"))
         )
         FusedLocation.start(this)
+
+        permissionsBuilder(
+            android.Manifest.permission.ACCESS_FINE_LOCATION,
+            android.Manifest.permission.ACCESS_COARSE_LOCATION).build()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

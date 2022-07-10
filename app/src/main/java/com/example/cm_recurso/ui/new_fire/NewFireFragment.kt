@@ -5,7 +5,6 @@ import android.content.ContentResolver
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.location.Geocoder
-import android.location.LocationManager
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -22,6 +21,7 @@ import com.example.cm_recurso.R
 import com.example.cm_recurso.databinding.FragmentNewFireBinding
 import com.example.cm_recurso.model.fire.FireDataBase
 import com.example.cm_recurso.model.fire.FireModelRoom
+import com.example.cm_recurso.ui.location.FusedLocation
 import com.example.cm_recurso.ui.location.OnLocationChangedListener
 import java.text.SimpleDateFormat
 import java.util.*
@@ -49,6 +49,7 @@ class NewFireFragment : Fragment(), OnLocationChangedListener {
         newFireViewModel = ViewModelProvider(this).get(NewFireViewModel::class.java)
         binding = FragmentNewFireBinding.bind(view)
         firemodelroom = FireModelRoom(FireDataBase.getInstance(requireContext()).fireDao())
+        FusedLocation.registerListener(this)
 
         populateSpinner()
         binding.buttonSubmitForm.setOnClickListener{
@@ -129,7 +130,6 @@ class NewFireFragment : Fragment(), OnLocationChangedListener {
     private fun reportaJa() {
         val date = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
         val hour = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
-
         firemodelroom.addFire(
             name = "ReportaJa",
             cartaoCidadao = "000000000",
@@ -161,7 +161,7 @@ class NewFireFragment : Fragment(), OnLocationChangedListener {
     private fun getAddress(lat: Double, lng: Double): String {
         val geocoder = Geocoder(context)
         val list = geocoder.getFromLocation(lat, lng, 1)
-        if (list.size == 0) return "" else return list[0].locality
+        if (list.size == 0) return "" else return list[0].adminArea.toString()
     }
 
     private fun populateSpinner(){
@@ -191,15 +191,6 @@ class NewFireFragment : Fragment(), OnLocationChangedListener {
         }else{
             ""
         }
-    }
-
-    private fun uriGenerator(draw : Int) : Uri {
-        return Uri.Builder()
-            .scheme(ContentResolver.SCHEME_ANDROID_RESOURCE)
-            .authority(resources.getResourcePackageName(draw))
-            .appendPath(resources.getResourceTypeName(draw))
-            .appendPath(resources.getResourceEntryName(draw))
-            .build()
     }
 
     override fun onLocationChanged(latitude: Double, longitude: Double) {
