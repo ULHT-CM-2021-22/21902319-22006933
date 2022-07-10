@@ -62,8 +62,6 @@ t
 Dapp/src/main/java/com/example/cm_recurso/model/fire/FireModelRoom.kt,f\7\f742b2ff08f0fb9910a5f4f6207f33528e80fceb
 z
 Japp/src/main/java/com/example/cm_recurso/ui/dashboard/DashboardFragment.kt,4\9\492799979a2e096540b7007aa2dbf1db76f68feb
-{
-Kapp/src/main/java/com/example/cm_recurso/ui/fires_list/FiresListFragment.kt,c\8\c876d33f609f991a16630b69ddda665d4e6a4f13
 z
 Japp/src/main/java/com/example/cm_recurso/ui/fires_list/MyFireViewholder.kt,1\3\1322ba7f0d1a83ce4c5eea6215a29e3c6156d9ff
 |

@@ -441,8 +441,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
 
-                                        android:background="@color/white">
-                                        <!--android:src="@drawable/ic_fire_person"-->
+                                        android:background="@color/white"
+                                        android:src="@drawable/ic_fire_person">
                                     </ImageView>
 
                                 </LinearLayout>
@@ -489,8 +489,8 @@
                                         android:id="@+id/fire_car"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:background="@color/white">
-                                        <!-- android:src="@drawable/ic_fire_car" -->
+                                        android:background="@color/white"
+                                        android:src="@drawable/ic_fire_car">
                                     </ImageView>
 
                                 </LinearLayout>
@@ -538,8 +538,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
 
-                                        android:background="@color/white">
-                                        <!--android:src="@drawable/ic_fires_plains"-->
+                                        android:background="@color/white"
+                                        android:src="@drawable/ic_fires_plains">
                                     </ImageView>
 
                                 </LinearLayout>
